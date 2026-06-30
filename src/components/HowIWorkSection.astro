@@ -1,0 +1,29 @@
+---
+import type { Translations } from '../i18n';
+
+interface Props {
+  t: Translations;
+}
+
+const { t } = Astro.props;
+---
+
+<section class="section" id="process">
+  <div class="container reveal">
+    <p class="section-label" data-i18n="howIWork.label">{t.howIWork.label}</p>
+    <h2 class="section-title" data-i18n="howIWork.title">{t.howIWork.title}</h2>
+    <p class="section-lead" data-i18n="howIWork.lead">{t.howIWork.lead}</p>
+
+    <div class="timeline">
+      {t.howIWork.steps.map((step, i) => (
+        <div class="timeline-item">
+          <div class="timeline-number">{i + 1}</div>
+          <div>
+            <h3 class="timeline-title" data-i18n={`howIWork.steps.${i}.title`}>{step.title}</h3>
+            <p class="timeline-text" data-i18n={`howIWork.steps.${i}.text`}>{step.text}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

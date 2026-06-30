@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TerminalHero from '../components/TerminalHero.astro';
+import AboutSection from '../components/AboutSection.astro';
+import ServicesSection from '../components/ServicesSection.astro';
+import ExpertiseSection from '../components/ExpertiseSection.astro';
+import TechStackSection from '../components/TechStackSection.astro';
+import HowIWorkSection from '../components/HowIWorkSection.astro';
+import ContactForm from '../components/ContactForm.astro';
+import Footer from '../components/Footer.astro';
+import { defaultLocale, getTranslations } from '../i18n';
+import en from '../i18n/en.json';
+import pl from '../i18n/pl.json';
+import fi from '../i18n/fi.json';
+
+const t = getTranslations(defaultLocale);
+---
+
+<BaseLayout locale={defaultLocale}>
+  <TerminalHero t={t} />
+  <AboutSection t={t} />
+  <ServicesSection t={t} />
+  <TechStackSection t={t} />
+  <ExpertiseSection t={t} />
+  <HowIWorkSection t={t} />
+  <ContactForm t={t} />
+  <Footer t={t} />
+</BaseLayout>
+
+<script define:vars={{ en, pl, fi }}>
+  window.__i18n = { en, pl, fi };
+</script>
+
+<script>
+  import { initI18n, getActiveLocale } from '../scripts/i18n';
+  import { initScrollReveal } from '../scripts/scroll-reveal';
+  import { initScrollSpy } from '../scripts/scroll-spy';
+  import { initTagTooltips } from '../scripts/tag-tooltips';
+  import { syncTypewriterLocale, initTypewriter, initTypewriterLocaleSync } from '../scripts/typewriter';
+
+  initI18n();
+  syncTypewriterLocale(getActiveLocale());
+  initTypewriter();
+  initTypewriterLocaleSync();
+  initScrollReveal();
+  initScrollSpy();
+  initTagTooltips();
+</script>

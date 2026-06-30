@@ -1,0 +1,449 @@
+---
+import TerminalWindow from './TerminalWindow.astro';
+import IconMail from './icons/IconMail.astro';
+import type { Translations } from '../i18n';
+
+interface Props {
+  t: Translations;
+}
+
+const { t } = Astro.props;
+---
+
+<section class="hero" id="top">
+  <div class="hero-canvas" aria-hidden="true">
+    <div class="hero-bg-base"></div>
+    <div class="hero-bg-wave hero-bg-wave-1"></div>
+    <div class="hero-bg-wave hero-bg-wave-2"></div>
+    <div class="hero-bg-wave hero-bg-wave-3"></div>
+    <div class="hero-bg-blob hero-bg-blob-a"></div>
+    <div class="hero-bg-blob hero-bg-blob-b"></div>
+  </div>
+
+  <div class="hero-panel">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="hero-label" data-i18n="hero.label">{t.hero.label}</p>
+        <h1 class="hero-headline" data-i18n="hero.headline">{t.hero.headline}</h1>
+        <p class="hero-subline" data-i18n="hero.subline">{t.hero.subline}</p>
+        <div class="hero-actions">
+          <a href="#contact" class="hero-cta hero-cta-primary">
+            <span class="hero-cta-icon" aria-hidden="true">
+              <IconMail />
+            </span>
+            <span data-i18n="hero.cta">{t.hero.cta}</span>
+          </a>
+          <a href="#about" class="hero-cta hero-cta-explore" data-i18n="hero.ctaSecondary">
+            <span class="hero-cta-explore-text">{t.hero.ctaSecondary}</span>
+            <span class="hero-cta-scroll-ring" aria-hidden="true">
+              <svg viewBox="0 0 20 20" fill="none">
+                <path d="M6 8l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-terminal">
+        <TerminalWindow title={t.hero.windowTitle} titleI18n="hero.windowTitle" bodyClass="terminal-body--hero">
+          <div id="typewriter" data-commands="[]">
+            <span class="terminal-line" id="typewriter-content"></span>
+          </div>
+        </TerminalWindow>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-waves" aria-hidden="true">
+    <svg class="hero-wave hero-wave-soft" viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 56C360 88 720 32 1080 56C1260 68 1380 60 1440 56V100H0V56Z" fill="rgba(200, 218, 238, 0.35)"/>
+    </svg>
+    <svg class="hero-wave hero-wave-front" viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 68C480 40 960 80 1440 52V100H0V68Z" fill="var(--bg-page-start)"/>
+    </svg>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    isolation: isolate;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    scroll-margin-top: var(--nav-height);
+    overflow: hidden;
+  }
+
+  .hero-canvas {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero-bg-base {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      175deg,
+      #fafcfe 0%,
+      #f5f8fc 42%,
+      #eef3f9 78%,
+      #e8eef6 100%
+    );
+  }
+
+  .hero-bg-wave {
+    position: absolute;
+    inset: -15% -20%;
+    pointer-events: none;
+    will-change: transform;
+  }
+
+  .hero-bg-wave-1 {
+    background: linear-gradient(
+      100deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.55) 28%,
+      rgba(0, 53, 128, 0.07) 48%,
+      rgba(255, 255, 255, 0.35) 68%,
+      transparent 100%
+    );
+    background-size: 220% 100%;
+    filter: blur(28px);
+    opacity: 0.85;
+    animation: hero-flag-drift 22s ease-in-out infinite;
+  }
+
+  .hero-bg-wave-2 {
+    background: linear-gradient(
+      98deg,
+      transparent 5%,
+      rgba(0, 53, 128, 0.06) 35%,
+      rgba(255, 255, 255, 0.45) 55%,
+      rgba(0, 53, 128, 0.05) 75%,
+      transparent 95%
+    );
+    background-size: 240% 100%;
+    filter: blur(36px);
+    opacity: 0.7;
+    animation: hero-flag-drift 28s ease-in-out infinite reverse;
+  }
+
+  .hero-bg-wave-3 {
+    background: linear-gradient(
+      102deg,
+      transparent 10%,
+      rgba(180, 205, 232, 0.25) 40%,
+      rgba(255, 255, 255, 0.2) 60%,
+      transparent 90%
+    );
+    background-size: 200% 100%;
+    filter: blur(48px);
+    opacity: 0.6;
+    animation: hero-flag-drift 34s ease-in-out infinite;
+    animation-delay: -8s;
+  }
+
+  @keyframes hero-flag-drift {
+    0% {
+      background-position: 120% 50%;
+      transform: translateX(2%) skewY(-0.6deg);
+    }
+    50% {
+      background-position: 0% 50%;
+      transform: translateX(-2%) skewY(0.6deg);
+    }
+    100% {
+      background-position: -120% 50%;
+      transform: translateX(2%) skewY(-0.6deg);
+    }
+  }
+
+  .hero-bg-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+  }
+
+  .hero-bg-blob-a {
+    width: min(50vw, 480px);
+    height: min(50vw, 480px);
+    top: -6%;
+    right: -4%;
+    background: rgba(160, 190, 225, 0.2);
+  }
+
+  .hero-bg-blob-b {
+    width: min(42vw, 380px);
+    height: min(42vw, 380px);
+    bottom: 14%;
+    left: -6%;
+    background: rgba(180, 205, 232, 0.18);
+  }
+
+  .hero-panel {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: calc(var(--nav-height) + 2.5rem) 0 6.5rem;
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.125rem;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .hero-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #6b849c;
+  }
+
+  .hero-headline {
+    font-family: var(--font-nav);
+    font-size: clamp(2rem, 5.5vw, 3.125rem);
+    font-weight: 600;
+    letter-spacing: -0.035em;
+    line-height: 1.1;
+    color: #243b55;
+    text-wrap: balance;
+  }
+
+  .hero-subline {
+    font-size: clamp(1.0625rem, 2.4vw, 1.125rem);
+    line-height: 1.6;
+    color: #5a7390;
+    max-width: 34rem;
+    text-wrap: balance;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.5rem;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    transition:
+      color 0.22s ease,
+      background 0.22s ease,
+      border-color 0.22s ease,
+      box-shadow 0.22s ease,
+      transform 0.22s ease;
+  }
+
+  .hero-cta:hover {
+    opacity: 1;
+  }
+
+  .hero-cta-primary {
+    gap: 0.5rem;
+    padding: 0.75rem 1.375rem;
+    font-family: var(--font-nav);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    white-space: nowrap;
+    color: #2a5080;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(120, 155, 190, 0.38);
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(42, 69, 96, 0.06);
+  }
+
+  .hero-cta-primary:hover {
+    color: #1f4268;
+    background: #ffffff;
+    border-color: rgba(90, 130, 170, 0.55);
+    box-shadow: 0 4px 16px rgba(42, 69, 96, 0.1);
+    transform: translateY(-1px);
+  }
+
+  .hero-cta-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 1em;
+    height: 1em;
+    line-height: 0;
+    opacity: 0.82;
+  }
+
+  .hero-cta-icon :global(svg) {
+    width: 1em;
+    height: 1em;
+    display: block;
+  }
+
+  .hero-cta-explore {
+    gap: 0.625rem;
+    padding: 0.75rem 0.25rem;
+    color: #5b7794;
+  }
+
+  .hero-cta-explore-text {
+    font-family: var(--font-nav);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    line-height: 1;
+  }
+
+  .hero-cta-scroll-ring {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    flex-shrink: 0;
+    border: 1.5px solid rgba(120, 155, 190, 0.45);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    animation: hero-scroll-ring 2.6s ease-in-out infinite;
+  }
+
+  .hero-cta-scroll-ring svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  @keyframes hero-scroll-ring {
+    0%,
+    100% {
+      transform: translateY(0);
+      border-color: rgba(120, 155, 190, 0.45);
+    }
+    50% {
+      transform: translateY(3px);
+      border-color: rgba(90, 130, 170, 0.65);
+    }
+  }
+
+  .hero-cta-explore:hover {
+    color: #2a5080;
+  }
+
+  .hero-cta-explore:hover .hero-cta-scroll-ring {
+    animation: none;
+    transform: translateY(2px);
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(90, 130, 170, 0.65);
+  }
+
+  .hero-terminal {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .hero-terminal :global(.terminal-window) {
+    box-shadow:
+      0 24px 56px rgba(26, 51, 82, 0.14),
+      0 0 0 1px rgba(26, 51, 82, 0.06);
+  }
+
+  .hero-waves {
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+    height: 5.5rem;
+    margin-top: auto;
+    pointer-events: none;
+  }
+
+  .hero-wave {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-wave-soft {
+    height: 75%;
+    opacity: 0.7;
+  }
+
+  .hero-wave-front {
+    height: 100%;
+  }
+
+  @media (min-width: 960px) {
+    .hero-panel {
+      padding: calc(var(--nav-height) + 3rem) 0 7rem;
+    }
+
+    .hero-inner {
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 3rem 3.5rem;
+    }
+
+    .hero-copy {
+      align-items: flex-start;
+      text-align: left;
+      margin: 0;
+      max-width: none;
+    }
+
+    .hero-actions {
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .hero-terminal {
+      max-width: none;
+      margin: 0;
+    }
+
+    .hero-waves {
+      height: 6.5rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-cta-scroll-ring {
+      animation: none;
+    }
+
+    .hero-cta-primary:hover {
+      transform: none;
+    }
+
+    .hero-bg-wave {
+      animation: none;
+      background-position: 50% 50%;
+      transform: none;
+    }
+  }
+</style>

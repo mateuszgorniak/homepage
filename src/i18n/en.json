@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "title": "Mateusz Górniak, Backend Developer & Fractional CTO",
+    "description": "I help teams ship web software. Fractional developer and CTO work: backend, legacy migrations, AI tooling."
+  },
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "stack": "Stack",
+    "expertise": "Expertise",
+    "process": "Process",
+    "contact": "Contact"
+  },
+  "hero": {
+    "windowTitle": "mateusz@rubycon: zsh",
+    "label": "Fractional backend & CTO",
+    "headline": "I help teams build backend that real users rely on.",
+    "subline": "Hands-on development, architecture, and legacy work. Senior support without a full-time hire.",
+    "cta": "Get in touch",
+    "ctaSecondary": "Learn more",
+    "commands": [
+      {
+        "cmd": "whoami",
+        "output": "mateusz\nrole: backend · fractional CTO\nstyle: writes code, reads the room",
+        "tone": "profile"
+      },
+      {
+        "cmd": "date +%Z",
+        "output": "tz: Europe/Helsinki\ncountry: Finland\n{{flag}}\nwork: remote · flexible",
+        "tone": "profile"
+      },
+      { "cmd": "echo $ROLE", "output": "hands-on backend · tech leadership on demand", "tone": "info" },
+      { "cmd": "cat stack.txt", "output": "Ruby · Rails · PostgreSQL · Redis", "tone": "stack" },
+      {
+        "cmd": "./mission.sh",
+        "output": "[ok] backend that stays up when users show up\n[ok] hard architecture calls owned, not parked\n[ok] updates the whole team actually understands\n[ok] reliable rhythm over weekend heroics\n[ok] when prod wobbles, fix the system not the symptom",
+        "tone": "success"
+      },
+      {
+        "cmd": "./check_availability.sh",
+        "output": "[ok] accepting new projects",
+        "tone": "success",
+        "interactive": {
+          "prelude": "> scanning calendar...",
+          "prompt": "> start a project? [Y/n]",
+          "answer": "y",
+          "waitMs": 2400
+        }
+      }
+    ]
+  },
+  "about": {
+    "label": "About",
+    "title": "Developer with a CTO background",
+    "photoAlt": "Mateusz Górniak",
+    "lead": "I build and run web applications, from backend code to technology decisions.",
+    "paragraphs": [
+      "Web developer with experience leading engineering teams as a CTO. I write code and I make technology choices that fit the business.",
+      "I work with startups and established companies that need senior help without a full-time hire: shipping features, reviewing architecture, or getting through a tough migration."
+    ]
+  },
+  "services": {
+    "label": "Services",
+    "title": "How I can help",
+    "lead": "Engagement models that match where your team is right now.",
+    "items": [
+      {
+        "title": "Fractional Developer",
+        "summary": "Senior hands-on work when you need extra capacity.",
+        "points": [
+          "Backend development and API design",
+          "Code review and quality improvements",
+          "Mentoring your team",
+          "Production debugging"
+        ]
+      },
+      {
+        "title": "Fractional CTO",
+        "summary": "Technology leadership without a full-time role.",
+        "points": [
+          "Roadmap and architecture",
+          "Team structure and hiring",
+          "Legacy system assessment",
+          "Build vs. buy decisions"
+        ]
+      }
+    ]
+  },
+  "stack": {
+    "label": "Stack",
+    "title": "Technologies I work with",
+    "lead": "Ruby is where I'm most at home. I choose tools that fit the problem, not the other way around.",
+    "primaryLabel": "Main stack",
+    "primary": [
+      {
+        "name": "Ruby",
+        "tip": "Fast to build and easy to change. A strong fit for MVPs and products that need to evolve quickly."
+      },
+      {
+        "name": "Rails",
+        "tip": "Ships features with less glue code. Lower maintenance cost and a large pool of developers."
+      },
+      {
+        "name": "PostgreSQL",
+        "tip": "Reliable data storage that scales with the business. No need to swap databases early."
+      },
+      {
+        "name": "Redis",
+        "tip": "Keeps the app fast under load. Handles caching and short-lived data without slowing users down."
+      },
+      {
+        "name": "Sidekiq",
+        "tip": "Background jobs for emails, reports, and imports. The app stays responsive while work runs async."
+      }
+    ],
+    "alsoLabel": "Also worked with",
+    "also": [
+      {
+        "name": "TypeScript",
+        "tip": "Catches bugs before release. Safer refactors as the codebase and team grow."
+      },
+      {
+        "name": "Node.js",
+        "tip": "Good for APIs and tooling when the team already works in JavaScript."
+      },
+      {
+        "name": "Python",
+        "tip": "Useful for integrations, data tasks, and connecting to AI or ML services."
+      },
+      {
+        "name": "Docker",
+        "tip": "Same setup in dev and production. Fewer surprises when you deploy."
+      },
+      {
+        "name": "AWS",
+        "tip": "Hosting that grows with the product. Turn services on when you need them, not before."
+      }
+    ],
+    "note": "Happy to join your existing stack or help pick the right one for a new project."
+  },
+  "expertise": {
+    "label": "Expertise",
+    "title": "Where I focus",
+    "lead": "From overall system design down to specific problems. Hover a tag to see what I actually do in each area.",
+    "items": [
+      {
+        "id": "architecture",
+        "name": "System architecture",
+        "tip": "I design systems from scratch or steer existing ones so you can add features without rewriting, server costs stay reasonable, and scaling is straightforward when traffic grows."
+      },
+      {
+        "id": "leadership",
+        "name": "Team leadership",
+        "tip": "I help shape the team, agree on how you write and review code, and mentor people so shipping does not hinge on one developer."
+      },
+      {
+        "id": "backend",
+        "name": "Backend development",
+        "tip": "I write the core application code: business logic, databases, background jobs. The layer that has to work reliably every day."
+      },
+      {
+        "id": "api",
+        "name": "API design",
+        "tip": "I design APIs your frontend and partners can build against without surprises as the product grows."
+      },
+      {
+        "id": "monitoring",
+        "name": "Monitoring & data",
+        "tip": "I set up monitoring so we are not guessing what happens in production. Bugs surface fast, trends show up in the data, and we track SLOs and spot bottlenecks before users feel them."
+      },
+      {
+        "id": "legacy",
+        "name": "Legacy migrations",
+        "tip": "I move old codebases forward step by step. The business keeps running, risk goes down, no big-bang rewrite."
+      },
+      {
+        "id": "ai",
+        "name": "AI-assisted development",
+        "tip": "I use AI where it saves me real time, and I review what goes to production so quality does not slip."
+      }
+    ]
+  },
+  "howIWork": {
+    "label": "Process",
+    "title": "How I work",
+    "lead": "Business goals first, then the technical plan.",
+    "steps": [
+      {
+        "title": "Assess",
+        "text": "Look at the codebase, the team, the constraints, and what success means for the business."
+      },
+      {
+        "title": "Plan",
+        "text": "Agree on a technical approach with realistic milestones. No unnecessary complexity."
+      },
+      {
+        "title": "Deliver",
+        "text": "Regular updates, working software, and knowledge passed on to your team."
+      }
+    ]
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Let's talk",
+    "lead": "Working on something or want to see if we fit? Send a message.",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "submit": "Send message",
+    "mailSubject": "Inquiry from {name} (RubyCon homepage)",
+    "mailHint": "Your email app will open — send the message from there.",
+    "or": "Or reach out directly",
+    "emailLabel": "Email",
+    "linkedin": "LinkedIn",
+    "linkedinHint": "Connect on LinkedIn"
+  },
+  "footer": {
+    "businessId": "Business ID (Y-tunnus)",
+    "businessIdValue": "3597173-9",
+    "ytjLink": "View in YTJ register",
+    "form": "Sole proprietorship (toiminimi)",
+    "rights": "All rights reserved."
+  }
+}

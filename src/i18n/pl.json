@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "title": "Mateusz Górniak, Backend Developer & Fractional CTO",
+    "description": "Pomagam zespołom dowozić oprogramowanie webowe. Fractional developer i CTO: backend, migracje legacy, narzędzia AI."
+  },
+  "nav": {
+    "about": "O mnie",
+    "services": "Usługi",
+    "stack": "Stack",
+    "expertise": "Specjalizacja",
+    "process": "Proces",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "windowTitle": "mateusz@rubycon: zsh",
+    "label": "Fractional backend & CTO",
+    "headline": "Pomagam zespołom budować backend, na którym polegają użytkownicy.",
+    "subline": "Kod, architektura i legacy. Wsparcie seniora bez etatu.",
+    "cta": "Napisz do mnie",
+    "ctaSecondary": "Dowiedz się więcej",
+    "commands": [
+      {
+        "cmd": "whoami",
+        "output": "mateusz\nrole: backend · fractional CTO\nstyle: pisze kod i czyta kontekst",
+        "tone": "profile"
+      },
+      {
+        "cmd": "date +%Z",
+        "output": "tz: Europe/Helsinki\ncountry: Finlandia\n{{flag}}\nwork: zdalnie · elastycznie",
+        "tone": "profile"
+      },
+      { "cmd": "echo $ROLE", "output": "backend hands-on · leadership techniczny na żądanie", "tone": "info" },
+      { "cmd": "cat stack.txt", "output": "Ruby · Rails · PostgreSQL · Redis", "tone": "stack" },
+      {
+        "cmd": "./mission.sh",
+        "output": "[ok] backend, który działa gdy wchodzą użytkownicy\n[ok] trudne decyzje architektoniczne: moje, na czas\n[ok] statusy zrozumiałe dla całego zespołu\n[ok] rytm zamiast weekendowych akcji ratunkowych\n[ok] jak coś pada, naprawiamy system, nie tylko objaw",
+        "tone": "success"
+      },
+      {
+        "cmd": "./check_availability.sh",
+        "output": "[ok] przyjmuję nowe projekty",
+        "tone": "success",
+        "interactive": {
+          "prelude": "> skanuję kalendarz...",
+          "prompt": "> zaczynamy projekt? [T/n]",
+          "answer": "t",
+          "waitMs": 2400
+        }
+      }
+    ]
+  },
+  "about": {
+    "label": "O mnie",
+    "title": "Developer z doświadczeniem CTO",
+    "photoAlt": "Mateusz Górniak",
+    "lead": "Buduję i prowadzę aplikacje webowe: od kodu backendu po decyzje technologiczne.",
+    "paragraphs": [
+      "Web developer z doświadczeniem w prowadzeniu zespołów inżynierskich jako CTO. Piszę kod i wybieram technologie, które mają sens dla biznesu.",
+      "Współpracuję ze startupami i firmami, które potrzebują wsparcia seniora bez etatu: nowe funkcje, przegląd architektury albo przeprowadzenie trudnej migracji."
+    ]
+  },
+  "services": {
+    "label": "Usługi",
+    "title": "Jak mogę pomóc",
+    "lead": "Formy współpracy dopasowane do etapu, na którym jest zespół.",
+    "items": [
+      {
+        "title": "Fractional Developer",
+        "summary": "Praca inżynierska, gdy brakuje rąk do pracy.",
+        "points": [
+          "Rozwój backendu i API",
+          "Code review i jakość kodu",
+          "Mentoring zespołu",
+          "Debugowanie na produkcji"
+        ]
+      },
+      {
+        "title": "Fractional CTO",
+        "summary": "Przywództwo techniczne bez pełnego etatu.",
+        "points": [
+          "Roadmapa i architektura",
+          "Struktura zespołu i rekrutacja",
+          "Ocena systemów legacy",
+          "Decyzje build vs. buy"
+        ]
+      }
+    ]
+  },
+  "stack": {
+    "label": "Stack",
+    "title": "Technologie, z którymi pracuję",
+    "lead": "Ruby to mój główny kierunek. Dobieram narzędzia do problemu, nie na odwrót.",
+    "primaryLabel": "Główny stack",
+    "primary": [
+      {
+        "name": "Ruby",
+        "tip": "Szybkie budowanie i łatwe zmiany. Dobry wybór na MVP i produkty, które muszą szybko się rozwijać."
+      },
+      {
+        "name": "Rails",
+        "tip": "Dowozi funkcje z mniejszą ilością kodu „klejącego”. Niższy koszt utrzymania i duża społeczność."
+      },
+      {
+        "name": "PostgreSQL",
+        "tip": "Niezawodna baza danych, która rośnie z biznesem. Bez przedwczesnej wymiany technologii."
+      },
+      {
+        "name": "Redis",
+        "tip": "Utrzymuje szybkość aplikacji pod obciążeniem. Cache i dane tymczasowe bez spowalniania użytkownika."
+      },
+      {
+        "name": "Sidekiq",
+        "tip": "Zadania w tle: maile, raporty, importy. Aplikacja odpowiada od razu, praca leci asynchronicznie."
+      }
+    ],
+    "alsoLabel": "Też znam i używam",
+    "also": [
+      {
+        "name": "TypeScript",
+        "tip": "Łapie błędy przed wdrożeniem. Bezpieczniejsze refaktoryzacje wraz z rozrostem kodu."
+      },
+      {
+        "name": "Node.js",
+        "tip": "Sprawdza się przy API i narzędziach, gdy zespół i tak pracuje w JavaScript."
+      },
+      {
+        "name": "Python",
+        "tip": "Integracje, dane i połączenia z usługami AI lub ML."
+      },
+      {
+        "name": "Docker",
+        "tip": "To samo środowisko na dev i produkcji. Mniej niespodzianek przy deployu."
+      },
+      {
+        "name": "AWS",
+        "tip": "Hosting, który rośnie z produktem. Włączasz usługi, gdy są potrzebne."
+      }
+    ],
+    "note": "Mogę wejść w istniejący stack albo pomóc dobrać technologie do nowego projektu."
+  },
+  "expertise": {
+    "label": "Specjalizacja",
+    "title": "Na czym się skupiam",
+    "lead": "Od ogólnej architektury po konkretne problemy. Najedź na tag — opiszę, co robię w praktyce.",
+    "items": [
+      {
+        "id": "architecture",
+        "name": "Architektura systemów",
+        "tip": "Projektuję system od zera albo prowadzę istniejący projekt tak, żeby dało się go rozszerzać bez przepisywania, sensownie wykorzystywał serwer i łatwo skalował, gdy rośnie ruch."
+      },
+      {
+        "id": "leadership",
+        "name": "Przywództwo zespołowe",
+        "tip": "Pomagam ułożyć zespół, ustalić jak piszecie i reviewujecie kod oraz rozwijać ludzi — żeby dowiezienie nie wisiało na jednej osobie."
+      },
+      {
+        "id": "backend",
+        "name": "Rozwój backendu",
+        "tip": "Piszę serce aplikacji: logikę biznesową, bazę danych, joby w tle. Warstwę, która musi działać niezawodnie każdego dnia."
+      },
+      {
+        "id": "api",
+        "name": "Projektowanie API",
+        "tip": "Projektuję API, pod które frontend i partnerzy mogą się podpiąć bez niespodzianek, w miarę jak produkt rośnie."
+      },
+      {
+        "id": "monitoring",
+        "name": "Monitoring i analiza danych",
+        "tip": "Konfiguruję monitoring, żeby nie zgadywać, co dzieje się na produkcji. Bugi wyłapuję szybko, trendy widać w danych, a SLO i wąskie gardła da się śledzić, zanim poczuje je użytkownik."
+      },
+      {
+        "id": "legacy",
+        "name": "Migracje legacy",
+        "tip": "Przenoszę stare systemy etapami. Biznes działa dalej, ryzyko spada, bez jednej wielkiej przebudowy na raz."
+      },
+      {
+        "id": "ai",
+        "name": "Rozwój wspomagany AI",
+        "tip": "Używam AI tam, gdzie realnie skraca mi pracę, a do produkcji trafia dopiero to, co sam sprawdzę."
+      }
+    ]
+  },
+  "howIWork": {
+    "label": "Proces",
+    "title": "Jak pracuję",
+    "lead": "Najpierw cele biznesowe, potem plan techniczny.",
+    "steps": [
+      {
+        "title": "Analiza",
+        "text": "Kod, zespół, ograniczenia i to, co znaczy sukces dla biznesu."
+      },
+      {
+        "title": "Plan",
+        "text": "Ustalony kierunek techniczny z realistycznymi etapami. Bez zbędnej komplikacji."
+      },
+      {
+        "title": "Realizacja",
+        "text": "Regularne informacje, działające oprogramowanie i przekazanie wiedzy zespołowi."
+      }
+    ]
+  },
+  "contact": {
+    "label": "Kontakt",
+    "title": "Porozmawiajmy",
+    "lead": "Masz projekt albo chcesz sprawdzić, czy pasujemy? Napisz.",
+    "name": "Imię i nazwisko",
+    "email": "E-mail",
+    "message": "Wiadomość",
+    "submit": "Wyślij wiadomość",
+    "mailSubject": "Zapytanie od {name} (RubyCon homepage)",
+    "mailHint": "Otworzy się program pocztowy — wyślij wiadomość stamtąd.",
+    "or": "Albo bezpośrednio",
+    "emailLabel": "E-mail",
+    "linkedin": "LinkedIn",
+    "linkedinHint": "Połącz się na LinkedIn"
+  },
+  "footer": {
+    "businessId": "Y-tunnus",
+    "businessIdValue": "3597173-9",
+    "ytjLink": "Zobacz w rejestrze YTJ",
+    "form": "Toiminimi (jednoosobowa działalność)",
+    "rights": "Wszelkie prawa zastrzeżone."
+  }
+}

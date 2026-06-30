@@ -1,0 +1,72 @@
+---
+import type { Translations } from '../i18n';
+
+interface Props {
+  t: Translations;
+}
+
+const { t } = Astro.props;
+---
+
+<section class="section" id="services">
+  <div class="container reveal">
+    <p class="section-label" data-i18n="services.label">{t.services.label}</p>
+    <h2 class="section-title" data-i18n="services.title">{t.services.title}</h2>
+    <p class="section-lead" data-i18n="services.lead">{t.services.lead}</p>
+
+    <div class="grid-2">
+      {t.services.items.map((item, i) => (
+        <article class="glass-card service-card">
+          <h3 class="service-title" data-i18n={`services.items.${i}.title`}>{item.title}</h3>
+          <p class="service-summary" data-i18n={`services.items.${i}.summary`}>{item.summary}</p>
+          <ul class="service-points">
+            {item.points.map((point, j) => (
+              <li data-i18n={`services.items.${i}.points.${j}`}>{point}</li>
+            ))}
+          </ul>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .service-card {
+    padding: 1.75rem;
+  }
+
+  .service-title {
+    font-family: var(--font-nav);
+    font-size: 1.125rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+
+  .service-summary {
+    font-size: 0.9375rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .service-points {
+    list-style: none;
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .service-points li {
+    position: relative;
+    padding-left: 1.25rem;
+    font-size: 0.875rem;
+    color: var(--text);
+  }
+
+  .service-points li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 600;
+  }
+</style>

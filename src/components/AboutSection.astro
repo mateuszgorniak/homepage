@@ -1,0 +1,111 @@
+---
+import type { Translations } from '../i18n';
+
+interface Props {
+  t: Translations;
+}
+
+const { t } = Astro.props;
+const portraitSrc = `${import.meta.env.BASE_URL}images/about-portrait.png`;
+---
+
+<section class="section" id="about">
+  <div class="container reveal">
+    <p class="section-label" data-i18n="about.label">{t.about.label}</p>
+    <h2 class="section-title" data-i18n="about.title">{t.about.title}</h2>
+
+    <div class="about-layout">
+      <div class="about-body">
+        <p class="section-lead about-lead" data-i18n="about.lead">{t.about.lead}</p>
+        <div class="about-content">
+          {t.about.paragraphs.map((paragraph, i) => (
+            <p class="about-paragraph" data-i18n={`about.paragraphs.${i}`}>{paragraph}</p>
+          ))}
+        </div>
+      </div>
+
+      <figure class="about-photo-wrap">
+
+        <img
+          class="about-photo"
+          src={portraitSrc}
+          alt={t.about.photoAlt}
+          width="400"
+          height="500"
+          loading="lazy"
+          decoding="async"
+        />
+      </figure>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(200px, 280px);
+    gap: 2.5rem 3rem;
+    align-items: center;
+  }
+
+  .about-body {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .about-photo-wrap {
+    margin: 0;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--surface-solid);
+    box-shadow:
+      0 12px 32px rgba(26, 51, 82, 0.08),
+      0 0 0 1px rgba(255, 255, 255, 0.6) inset;
+  }
+
+  .about-photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .about-lead {
+    margin-bottom: 1.5rem;
+  }
+
+  .about-content {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .about-paragraph {
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 768px) {
+    .about-layout {
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+      align-items: start;
+    }
+
+    .about-photo-wrap {
+      order: 1;
+      max-width: 280px;
+      margin: 0 auto;
+    }
+
+    .about-body {
+      order: 2;
+      justify-content: flex-start;
+    }
+  }
+</style>

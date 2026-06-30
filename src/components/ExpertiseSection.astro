@@ -1,0 +1,45 @@
+---
+import type { Translations } from '../i18n';
+import TagIcon from './TagIcon.astro';
+import { expertiseIconSrc } from '../lib/tag-icons';
+
+interface Props {
+  t: Translations;
+}
+
+const { t } = Astro.props;
+---
+
+<section class="section" id="expertise">
+  <div class="container reveal">
+    <p class="section-label" data-i18n="expertise.label">{t.expertise.label}</p>
+    <h2 class="section-title" data-i18n="expertise.title">{t.expertise.title}</h2>
+    <p class="section-lead" data-i18n="expertise.lead">{t.expertise.lead}</p>
+
+    <div class="tag-list expertise-list">
+      {t.expertise.items.map((item, i) => (
+        <span class="tag-wrap">
+          <button type="button" class="tag expertise-tag" aria-describedby={`expertise-tip-${i}`}>
+            <TagIcon src={expertiseIconSrc(item.id)} />
+            <span data-i18n={`expertise.items.${i}.name`}>{item.name}</span>
+          </button>
+          <span id={`expertise-tip-${i}`} class="tag-tooltip" popover="manual" role="tooltip" data-i18n={`expertise.items.${i}.tip`}>
+            {item.tip}
+          </span>
+        </span>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .expertise-list {
+    max-width: 720px;
+  }
+
+  .expertise-tag {
+    gap: 0.4rem;
+    cursor: help;
+    font: inherit;
+  }
+</style>

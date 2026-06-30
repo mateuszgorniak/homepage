@@ -1,0 +1,224 @@
+{
+  "meta": {
+    "title": "Mateusz Górniak, Backend-kehittäjä & Fractional CTO",
+    "description": "Autan tiimejä viemään verkkosovelluksia maaliin. Fractional developer ja CTO: backend, legacy-migraatiot, AI-työkalut."
+  },
+  "nav": {
+    "about": "Tietoa",
+    "services": "Palvelut",
+    "stack": "Stack",
+    "expertise": "Osaaminen",
+    "process": "Prosessi",
+    "contact": "Yhteystiedot"
+  },
+  "hero": {
+    "windowTitle": "mateusz@rubycon: zsh",
+    "label": "Fractional backend & CTO",
+    "headline": "Autan tiimejä rakentamaan backendin, johon käyttäjät voivat luottaa.",
+    "subline": "Käytännön kehitys, arkkitehtuuri ja legacy. Senior-tukea ilman kokopäiväistä palkkausta.",
+    "cta": "Ota yhteyttä",
+    "ctaSecondary": "Lue lisää",
+    "commands": [
+      {
+        "cmd": "whoami",
+        "output": "mateusz\nrole: backend · fractional CTO\nstyle: kirjoittaa koodia, lukee tilanteen",
+        "tone": "profile"
+      },
+      {
+        "cmd": "date +%Z",
+        "output": "tz: Europe/Helsinki\ncountry: Suomi\n{{flag}}\nwork: etä · joustava",
+        "tone": "profile"
+      },
+      { "cmd": "echo $ROLE", "output": "hands-on backend · tekninen johtaminen tarpeen mukaan", "tone": "info" },
+      { "cmd": "cat stack.txt", "output": "Ruby · Rails · PostgreSQL · Redis", "tone": "stack" },
+      {
+        "cmd": "./mission.sh",
+        "output": "[ok] backend, joka toimii kun käyttäjät tulevat\n[ok] vaikeat arkkitehtuuripäätökset hoidossa heti\n[ok] päivitykset, joita koko tiimi ymmärtää\n[ok] tasainen tahti voittaa viikonloppusankarit\n[ok] kun tuotanto horjuu, korjataan systeemi eikä vain oire",
+        "tone": "success"
+      },
+      {
+        "cmd": "./check_availability.sh",
+        "output": "[ok] otan vastaan uusia projekteja",
+        "tone": "success",
+        "interactive": {
+          "prelude": "> tarkistan kalenterin...",
+          "prompt": "> aloitetaanko projekti? [K/e]",
+          "answer": "k",
+          "waitMs": 2400
+        }
+      }
+    ]
+  },
+  "about": {
+    "label": "Tietoa",
+    "title": "Kehittäjä, jolla on CTO-kokemusta",
+    "photoAlt": "Mateusz Górniak",
+    "lead": "Rakennan ja johdan verkkosovelluksia backend-koodista teknologiapäätöksiin.",
+    "paragraphs": [
+      "Verkkokehittäjä, jolla on kokemusta insinööritiimien johtamisesta CTO:n roolissa. Kirjoitan koodia ja valitsen teknologiat, jotka sopivat liiketoimintaan.",
+      "Työskentelen startupien ja vakiintuneiden yritysten kanssa, jotka tarvitsevat senior-tason apua ilman kokopäiväistä palkkausta: ominaisuuksien toimitus, arkkitehtuurin arviointi tai vaikea migraatio."
+    ]
+  },
+  "services": {
+    "label": "Palvelut",
+    "title": "Miten voin auttaa",
+    "lead": "Yhteistyömallit, jotka sopivat tiimisi tilanteeseen.",
+    "items": [
+      {
+        "title": "Fractional Developer",
+        "summary": "Käytännön senior-työtä, kun kapasiteettia tarvitaan lisää.",
+        "points": [
+          "Backend-kehitys ja API-suunnittelu",
+          "Koodikatselmointi ja laatu",
+          "Tiimin mentorointi",
+          "Tuotanto-ongelmien debuggaus"
+        ]
+      },
+      {
+        "title": "Fractional CTO",
+        "summary": "Teknologiajohtaminen ilman kokopäiväistä roolia.",
+        "points": [
+          "Roadmap ja arkkitehtuuri",
+          "Tiimirakenne ja rekrytointi",
+          "Legacy-järjestelmien arviointi",
+          "Build vs. buy -päätökset"
+        ]
+      }
+    ]
+  },
+  "stack": {
+    "label": "Stack",
+    "title": "Teknologiat, joilla työskentelen",
+    "lead": "Ruby on vahvin alueeni. Valitsen työkalut ongelman mukaan, ei toisinpäin.",
+    "primaryLabel": "Päästack",
+    "primary": [
+      {
+        "name": "Ruby",
+        "tip": "Nopea rakentaa ja helppo muuttaa. Hyvä valinta MVP:lle ja tuotteille, jotka kehittyvät nopeasti."
+      },
+      {
+        "name": "Rails",
+        "tip": "Toimittaa ominaisuuksia vähemmällä liimakoodilla. Alempi ylläpitokustannus ja laaja osaajapooli."
+      },
+      {
+        "name": "PostgreSQL",
+        "tip": "Luotettava tietokanta, joka skaalautuu liiketoiminnan mukana. Ei tarvetta vaihtaa varhain."
+      },
+      {
+        "name": "Redis",
+        "tip": "Pitää sovelluksen nopeana kuormituksessa. Välimuisti ja lyhytaikainen data ilman hidastelua."
+      },
+      {
+        "name": "Sidekiq",
+        "tip": "Taustatyöt: sähköpostit, raportit, importit. Sovellus vastaa heti, työ jatkuu taustalla."
+      }
+    ],
+    "alsoLabel": "Myös tuttuja",
+    "also": [
+      {
+        "name": "TypeScript",
+        "tip": "Ottaa virheet kiinni ennen tuotantoa. Turvallisemmat refaktoroinnit kasvavassa koodissa."
+      },
+      {
+        "name": "Node.js",
+        "tip": "Sopii API:hin ja työkaluihin, kun tiimi työskentelee jo JavaScriptillä."
+      },
+      {
+        "name": "Python",
+        "tip": "Integraatiot, data ja yhteydet AI- tai ML-palveluihin."
+      },
+      {
+        "name": "Docker",
+        "tip": "Sama ympäristö devissä ja tuotannossa. Vähemmän yllätyksiä deployn yhteydessä."
+      },
+      {
+        "name": "AWS",
+        "tip": "Hosting, joka kasvaa tuotteen mukana. Palvelut päälle vain kun niitä tarvitaan."
+      }
+    ],
+    "note": "Voin liittyä olemassa olevaan stackiin tai auttaa valitsemaan teknologiat uuteen projektiin."
+  },
+  "expertise": {
+    "label": "Osaaminen",
+    "title": "Missä keskityn",
+    "lead": "Kokonaisarkkitehtuurista yksittäisiin ongelmiin. Vie hiiri tagin päälle — kerron, mitä teen käytännössä.",
+    "items": [
+      {
+        "id": "architecture",
+        "name": "Järjestelmäarkkitehtuuri",
+        "tip": "Suunnittelen järjestelmän alusta tai johdan olemassa olevaa projektia niin, että sitä voi laajentaa ilman uudelleenkirjoitusta, palvelinkustannukset pysyvät kurissa ja skaalaus onnistuu, kun liikenne kasvaa."
+      },
+      {
+        "id": "leadership",
+        "name": "Tiimijohtaminen",
+        "tip": "Autan rakentamaan tiimin, sopimaan miten koodia kirjoitetaan ja reviewataan sekä kehittämään ihmisiä — jotta toimitus ei riipu yhdestä kehittäjästä."
+      },
+      {
+        "id": "backend",
+        "name": "Backend-kehitys",
+        "tip": "Kirjoitan sovelluksen ydinlogiikan: liiketoimintalogiikan, tietokannat, taustatyöt. Kerroksen, joka pitää toimia luotettavasti joka päivä."
+      },
+      {
+        "id": "api",
+        "name": "API-suunnittelu",
+        "tip": "Suunnittelen API:t, joihin frontend ja kumppanit voivat nojata ilman yllätyksiä tuotteen kasvaessa."
+      },
+      {
+        "id": "monitoring",
+        "name": "Monitorointi ja data",
+        "tip": "Rakennan monitoroinnin, jotta emme arvaile mitä tuotannossa tapahtuu. Bugit nousevat nopeasti esiin, trendit näkyvät datasta, ja SLO:t sekä pullonkaulat havaitaan ennen kuin käyttäjät huomaavat."
+      },
+      {
+        "id": "legacy",
+        "name": "Legacy-migraatiot",
+        "tip": "Siirrän vanhoja järjestelmiä vaiheittain. Liiketoiminta pyörii, riski pienenee, ei yhtä isoa uudelleenkirjoitusta kerralla."
+      },
+      {
+        "id": "ai",
+        "name": "AI-avusteinen kehitys",
+        "tip": "Käytän AI:ta siellä, missä se säästää minulta oikeaa aikaa, ja tarkistan itse mitä menee tuotantoon."
+      }
+    ]
+  },
+  "howIWork": {
+    "label": "Prosessi",
+    "title": "Miten työskentelen",
+    "lead": "Liiketoimintatavoitteet ensin, sitten tekninen suunnitelma.",
+    "steps": [
+      {
+        "title": "Arviointi",
+        "text": "Koodipohja, tiimi, rajoitteet ja se, miltä menestys näyttää liiketoiminnan kannalta."
+      },
+      {
+        "title": "Suunnittelu",
+        "text": "Yhteinen tekninen linja realistisine välitavoitteineen. Ilman turhaa monimutkaisuutta."
+      },
+      {
+        "title": "Toteutus",
+        "text": "Säännölliset päivitykset, toimiva ohjelmisto ja tiedon siirto tiimille."
+      }
+    ]
+  },
+  "contact": {
+    "label": "Yhteystiedot",
+    "title": "Keskustellaan",
+    "lead": "Projekti mielessä tai haluatko katsoa, sopiiko yhteistyö? Lähetä viesti.",
+    "name": "Nimi",
+    "email": "Sähköposti",
+    "message": "Viesti",
+    "submit": "Lähetä viesti",
+    "mailSubject": "Yhteydenotto: {name} (RubyCon homepage)",
+    "mailHint": "Sähköpostiohjelmasi avautuu — lähetä viesti sieltä.",
+    "or": "Tai suoraan",
+    "emailLabel": "Sähköposti",
+    "linkedin": "LinkedIn",
+    "linkedinHint": "Ota yhteyttä LinkedInissä"
+  },
+  "footer": {
+    "businessId": "Y-tunnus",
+    "businessIdValue": "3597173-9",
+    "ytjLink": "Katso YTJ-rekisteristä",
+    "form": "Toiminimi (yksityinen elinkeinonharjoittaja)",
+    "rights": "Kaikki oikeudet pidätetään."
+  }
+}
