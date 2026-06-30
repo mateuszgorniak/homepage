@@ -22,9 +22,7 @@
 
 ## 🏁 Run locally
 
-**Only [Docker](https://docs.docker.com/get-docker/) is required.** No Node.js install on your machine.
-
-### 🐳 Docker *(recommended)*
+Requires [Docker](https://docs.docker.com/get-docker/).
 
 ```bash
 docker compose up --build
@@ -40,31 +38,20 @@ Open **http://localhost:4321** (dev uses `BASE_PATH=/`; GitHub Pages keeps `/rub
 | `docker compose up --build` | Rebuild image after dependency changes |
 | `docker compose down` | Stop containers |
 | `docker compose --profile preview up --build` | Build + preview production output |
-| `docker compose --profile build run --rm build` | Write static `dist/` to disk (same as CI) |
-
-### 🟢 Node.js *(alternative)*
-
-If you prefer running without Docker, install **Node.js 24 LTS** (see [`.nvmrc`](.nvmrc) → major `24`).
-
-| Tool | Command |
-|------|---------|
-| **nvm** | `nvm install` → `nvm use` |
-| **fnm** | `fnm install` → `fnm use` |
-| **Direct** | [nodejs.org](https://nodejs.org/en/download) |
-
-```bash
-npm install
-npm run dev
-```
-
-```bash
-npm run build    # production build → dist/
-npm run preview  # preview production build
-```
+| `docker compose --profile build run --rm build` | Production build → `dist/` (same as CI) |
 
 ### 🚀 GitHub Pages (production)
 
-Docker is for local development only. Production uses **GitHub Actions**, which builds static files and publishes to GitHub Pages.
+Local dev uses Docker. Production uses **GitHub Actions**, which builds static files and publishes to GitHub Pages.
+
+**Every deploy:** push to `main`. The workflow builds and publishes automatically.
+
+| Repo type | `BASE_PATH` in workflow |
+|-----------|-------------------------|
+| `username/rubycon-homepage` | `/rubycon-homepage/` *(default)* |
+| `username.github.io` | `/` |
+
+Live URL: `https://<username>.github.io/rubycon-homepage/`
 
 ---
 
@@ -104,88 +91,18 @@ Colors are CSS variables in `:root`. Change once, applies everywhere.
 
 ### 📬 Contact form
 
-The form uses **`mailto:`** — no API keys or third-party services. On submit it opens the visitor's email app with a pre-filled subject and body to `mateusz.gorniak@gmail.com`. They send the message from their own client.
+The form uses **`mailto:`** - no API keys or third-party services. On submit it opens the visitor's email app with a pre-filled subject and body to `mateusz.gorniak@gmail.com`. They send the message from their own client.
 
 > Static hosting (GitHub Pages) has no server to send email in the background. For silent form submission you'd need a backend or service like Formspree / Web3Forms.
 
-### 🌍 Add or change a language
-
-1. Copy `src/i18n/en.json` → `src/i18n/xx.json`
-2. Translate all values
-3. Register locale in `src/i18n/index.ts` (`locales`, `localeLabels`, `translations`)
-4. Add a button in `src/components/SiteNav.astro`
-
 ### 📦 Update dependencies
 
+After editing `package.json`:
+
 ```bash
-nvm use
-npm outdated              # check what's behind
-npm install astro@latest typescript@latest
-npm run build             # always verify after upgrades
+docker compose up --build
+docker compose --profile build run --rm build
 ```
-
-Current stack:
-
-| Package | Role |
-|---------|------|
-| `astro` ^7 | Static site generator |
-| `typescript` ^6 | Type checking |
-
-> Astro 7 requires **Node ≥ 22.12**. This project targets **Node 24 LTS** (major `24` in `.nvmrc`). CI uses Node 24.
-
-### 🚀 Deploy to GitHub Pages
-
-**One-time setup:**
-
-1. Push repo to GitHub
-2. **Settings → Pages → Build and deployment** → Source: **GitHub Actions**
-
-**Every deploy:** push to `main`. The workflow builds and publishes automatically.
-
-| Repo type | `BASE_PATH` in workflow |
-|-----------|-------------------------|
-| `username/rubycon-homepage` | `/rubycon-homepage/` *(default)* |
-| `username.github.io` | `/` |
-
-Live URL: `https://<username>.github.io/rubycon-homepage/`
-
-### 🏢 Business details (footer)
-
-- **Y-tunnus:** `3597173-9`
-- **YTJ register:** https://tietopalvelu.ytj.fi/yritys/3597173-9
-- Edit labels in `src/i18n/*.json` under `footer.*`
-
----
-
-## 📁 Project structure
-
-```
-.
-├── Dockerfile                     # Dev / build / preview images (Node 24 LTS)
-├── docker-compose.yml             # Local dev without installing Node
-├── docker-entrypoint.sh
-├── .github/workflows/deploy.yml   # CI/CD → GitHub Pages (no Docker)
-├── .nvmrc                         # Node 24 LTS (major only)
-├── public/                        # Static assets (favicon)
-├── src/
-│   ├── components/                # Astro UI components
-│   ├── i18n/                      # Translation JSON files
-│   ├── layouts/                   # HTML shell + meta tags
-│   ├── pages/                     # Routes (single-page site)
-│   ├── scripts/                   # Client-side JS
-│   └── styles/                    # CSS
-├── astro.config.mjs               # Site URL, base path
-```
-
----
-
-## 🛠️ Commands
-
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Local dev server |
-| `npm run build` | Production build → `dist/` |
-| `npm run preview` | Preview production build locally |
 
 ---
 
@@ -196,10 +113,9 @@ Live URL: `https://<username>.github.io/rubycon-homepage/`
 | Docker: `Another astro dev server is already running` | Run `docker compose down`, then `docker compose up --build` again |
 | Docker: port already in use | Stop other services on `4321` or change the port mapping in `docker-compose.yml` |
 | Docker: slow first start | First run installs `node_modules` into a volume; later starts are faster |
-| `Node.js is not supported by Astro` | Use Docker, or run `nvm install && nvm use` (Node 24 LTS) |
 | Broken assets on GitHub Pages | Check `BASE_PATH` in `astro.config.mjs` matches repo name |
 | Language switch not working | Ensure JSON keys match across `en.json`, `pl.json`, `fi.json` |
-| Build fails after upgrade | Delete `node_modules` + `package-lock.json`, then `npm install` |
+| Build fails after upgrade | Run `docker compose down -v`, then `docker compose up --build` |
 
 ---
 
