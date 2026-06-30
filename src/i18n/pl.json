@@ -141,7 +141,7 @@
   "expertise": {
     "label": "Specjalizacja",
     "title": "Na czym się skupiam",
-    "lead": "Od ogólnej architektury po konkretne problemy. Najedź na tag — opiszę, co robię w praktyce.",
+    "lead": "Od ogólnej architektury po konkretne problemy. Najedź na tag - opiszę, co robię w praktyce.",
     "items": [
       {
         "id": "architecture",
@@ -151,7 +151,7 @@
       {
         "id": "leadership",
         "name": "Przywództwo zespołowe",
-        "tip": "Pomagam ułożyć zespół, ustalić jak piszecie i reviewujecie kod oraz rozwijać ludzi — żeby dowiezienie nie wisiało na jednej osobie."
+        "tip": "Pomagam ułożyć zespół, ustalić jak piszecie i reviewujecie kod oraz rozwijać ludzi - żeby dowiezienie nie wisiało na jednej osobie."
       },
       {
         "id": "backend",
@@ -208,7 +208,7 @@
     "message": "Wiadomość",
     "submit": "Wyślij wiadomość",
     "mailSubject": "Zapytanie od {name} (RubyCon homepage)",
-    "mailHint": "Otworzy się program pocztowy — wyślij wiadomość stamtąd.",
+    "mailHint": "Otworzy się program pocztowy - wyślij wiadomość stamtąd.",
     "or": "Albo bezpośrednio",
     "emailLabel": "E-mail",
     "linkedin": "LinkedIn",

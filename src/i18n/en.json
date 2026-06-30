@@ -208,7 +208,7 @@
     "message": "Message",
     "submit": "Send message",
     "mailSubject": "Inquiry from {name} (RubyCon homepage)",
-    "mailHint": "Your email app will open — send the message from there.",
+    "mailHint": "Your email app will open - send the message from there.",
     "or": "Or reach out directly",
     "emailLabel": "Email",
     "linkedin": "LinkedIn",

@@ -141,7 +141,7 @@
   "expertise": {
     "label": "Osaaminen",
     "title": "Missä keskityn",
-    "lead": "Kokonaisarkkitehtuurista yksittäisiin ongelmiin. Vie hiiri tagin päälle — kerron, mitä teen käytännössä.",
+    "lead": "Kokonaisarkkitehtuurista yksittäisiin ongelmiin. Vie hiiri tagin päälle - kerron, mitä teen käytännössä.",
     "items": [
       {
         "id": "architecture",
@@ -151,7 +151,7 @@
       {
         "id": "leadership",
         "name": "Tiimijohtaminen",
-        "tip": "Autan rakentamaan tiimin, sopimaan miten koodia kirjoitetaan ja reviewataan sekä kehittämään ihmisiä — jotta toimitus ei riipu yhdestä kehittäjästä."
+        "tip": "Autan rakentamaan tiimin, sopimaan miten koodia kirjoitetaan ja reviewataan sekä kehittämään ihmisiä - jotta toimitus ei riipu yhdestä kehittäjästä."
       },
       {
         "id": "backend",
@@ -208,7 +208,7 @@
     "message": "Viesti",
     "submit": "Lähetä viesti",
     "mailSubject": "Yhteydenotto: {name} (RubyCon homepage)",
-    "mailHint": "Sähköpostiohjelmasi avautuu — lähetä viesti sieltä.",
+    "mailHint": "Sähköpostiohjelmasi avautuu - lähetä viesti sieltä.",
     "or": "Tai suoraan",
     "emailLabel": "Sähköposti",
     "linkedin": "LinkedIn",
