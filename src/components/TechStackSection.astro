@@ -1,0 +1,117 @@
+---
+import type { Translations } from '../i18n';
+import TagIcon from './TagIcon.astro';
+import { stackIconByTechName, stackIconSrc } from '../lib/tag-icons';
+
+interface Props {
+  t: Translations;
+}
+
+const { t } = Astro.props;
+---
+
+<section class="section" id="stack">
+  <div class="container reveal">
+    <p class="section-label">{t.stack.label}</p>
+    <h2 class="section-title">{t.stack.title}</h2>
+    {t.stack.subtitle && <p class="section-subtitle">{t.stack.subtitle}</p>}
+    <p class="section-lead">{t.stack.lead}</p>
+
+    <div class="stack-groups">
+      <div class="stack-group glass-card">
+        <h3 class="stack-group-title">{t.stack.primaryLabel}</h3>
+        <div class="tag-list">
+          {t.stack.primary.map((item, i) => (
+            <span class="tag-wrap">
+              <button
+                type="button"
+                class:list={['tag', 'stack-tag', item.name === 'Ruby' && 'tag-ruby']}
+                aria-describedby={`tip-primary-${i}`}
+              >
+                <TagIcon src={stackIconSrc(stackIconByTechName[item.name])} />
+                <span>{item.name}</span>
+              </button>
+              <span
+                id={`tip-primary-${i}`}
+                class="tag-tooltip"
+                popover="manual"
+                role="tooltip"
+              >
+                {item.tip}
+              </span>
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div class="stack-group glass-card">
+        <h3 class="stack-group-title">{t.stack.alsoLabel}</h3>
+        <div class="tag-list">
+          {t.stack.also.map((item, i) => (
+            <span class="tag-wrap">
+              <button type="button" class="tag stack-tag" aria-describedby={`tip-also-${i}`}>
+                <TagIcon src={stackIconSrc(stackIconByTechName[item.name])} />
+                <span>{item.name}</span>
+              </button>
+              <span id={`tip-also-${i}`} class="tag-tooltip" popover="manual" role="tooltip">
+                {item.tip}
+              </span>
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <p class="stack-note">{t.stack.note}</p>
+  </div>
+</section>
+
+<style>
+  .stack-groups {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .stack-group {
+    padding: 1.5rem;
+    overflow: visible;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .stack-group:hover {
+    transform: none;
+  }
+
+  .stack-group-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+
+  .stack-note {
+    font-size: 0.9375rem;
+    color: var(--muted);
+    max-width: 640px;
+    line-height: 1.6;
+  }
+
+  .stack-tag {
+    gap: 0.4rem;
+    cursor: help;
+    font: inherit;
+  }
+
+  .tag-ruby {
+    border-color: rgba(204, 52, 45, 0.35);
+    background: rgba(204, 52, 45, 0.08);
+  }
+
+  .tag-ruby:hover {
+    border-color: rgba(204, 52, 45, 0.55);
+    background: rgba(204, 52, 45, 0.12);
+  }
+</style>

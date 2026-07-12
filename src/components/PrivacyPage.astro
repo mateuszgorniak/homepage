@@ -1,0 +1,88 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Footer from './Footer.astro';
+import type { Locale } from '../i18n';
+import { getTranslations } from '../i18n';
+import { CONTACT_EMAIL, BUSINESS_ID, YTJ_URL } from '../config/site';
+import { getLocalePath } from '../lib/locale-urls';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getTranslations(locale);
+const homePath = getLocalePath(locale, import.meta.env.BASE_URL);
+---
+
+<BaseLayout
+  locale={locale}
+  t={t}
+  page="privacy"
+  title={t.privacy.meta.title}
+  description={t.privacy.meta.description}
+>
+  <article class="section legal-page">
+    <div class="container reveal">
+      <h1 class="legal-title">{t.privacy.title}</h1>
+      <p class="legal-updated">{t.privacy.updated}</p>
+
+      <section class="legal-section">
+        <h2 class="legal-section-title">{t.privacy.controller.title}</h2>
+        <dl class="legal-details">
+          <div class="legal-detail">
+            <dt>{t.privacy.controller.nameLabel}</dt>
+            <dd>{t.privacy.controller.name}</dd>
+          </div>
+          <div class="legal-detail">
+            <dt>{t.privacy.controller.formLabel}</dt>
+            <dd>{t.privacy.controller.form}</dd>
+          </div>
+          <div class="legal-detail">
+            <dt>{t.privacy.controller.emailLabel}</dt>
+            <dd>
+              <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+            </dd>
+          </div>
+          <div class="legal-detail">
+            <dt>{t.footer.businessId}</dt>
+            <dd>
+              {BUSINESS_ID}
+              {' · '}
+              <a href={YTJ_URL} target="_blank" rel="noopener noreferrer">
+                {t.footer.ytjLink}
+              </a>
+            </dd>
+          </div>
+        </dl>
+      </section>
+
+      {t.privacy.sections.map((section) => (
+        <section class="legal-section">
+          <h2 class="legal-section-title">{section.title}</h2>
+          {section.id === 'rights' ? (
+            <p class="legal-section-body">
+              {section.body}{' '}
+              <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+              {' '}
+              {t.privacy.rightsBrowserNote}
+            </p>
+          ) : (
+            <p class="legal-section-body">{section.body}</p>
+          )}
+        </section>
+      ))}
+
+      <p class="legal-back">
+        <a href={homePath}>{t.privacy.backHome}</a>
+      </p>
+    </div>
+  </article>
+  <Footer t={t} locale={locale} />
+</BaseLayout>
+
+<script>
+  import { initScrollReveal } from '../scripts/scroll-reveal';
+
+  initScrollReveal();
+</script>

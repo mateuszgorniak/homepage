@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TerminalHero from './TerminalHero.astro';
+import AboutSection from './AboutSection.astro';
+import ServicesSection from './ServicesSection.astro';
+import SituationsSection from './SituationsSection.astro';
+import ExpertiseSection from './ExpertiseSection.astro';
+import TechStackSection from './TechStackSection.astro';
+import HowIWorkSection from './HowIWorkSection.astro';
+import FaqSection from './FaqSection.astro';
+import ContactSection from './ContactSection.astro';
+import Footer from './Footer.astro';
+import type { Locale } from '../i18n';
+import { getTranslations } from '../i18n';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getTranslations(locale);
+---
+
+<BaseLayout locale={locale} t={t}>
+  <TerminalHero t={t} />
+  <AboutSection t={t} />
+  <ServicesSection t={t} />
+  <SituationsSection t={t} />
+  <ExpertiseSection t={t} />
+  <HowIWorkSection t={t} />
+  <TechStackSection t={t} />
+  <FaqSection t={t} />
+  <ContactSection t={t} />
+  <Footer t={t} locale={locale} />
+</BaseLayout>
+
+<script>
+  import { initScrollReveal } from '../scripts/scroll-reveal';
+  import { initScrollSpy } from '../scripts/scroll-spy';
+  import { initTagTooltips } from '../scripts/tag-tooltips';
+  import { initTypewriter } from '../scripts/typewriter';
+
+  initTypewriter();
+  initScrollReveal();
+  initScrollSpy();
+  initTagTooltips();
+</script>

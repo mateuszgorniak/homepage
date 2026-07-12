@@ -1,0 +1,32 @@
+User-agent: *
+Allow: /
+
+# Search
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# AI crawlers (site is public; block specific agents here if needed)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://rubycon.fi/sitemap.xml
+
+# Curated index for AI tools: https://rubycon.fi/llms.txt

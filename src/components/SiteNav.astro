@@ -1,0 +1,417 @@
+---
+import type { Translations } from '../i18n';
+import type { Locale } from '../i18n';
+import type { SitePage } from '../lib/locale-urls';
+import { getHomeSectionUrl, getHomeUrl, getLanguageSwitcherUrl } from '../lib/locale-urls';
+import ThemeToggle from './ThemeToggle.astro';
+import RubyconLogo from './RubyconLogo.astro';
+import FlagEn from './icons/FlagEn.astro';
+import FlagPl from './icons/FlagPl.astro';
+import FlagFi from './icons/FlagFi.astro';
+
+interface Props {
+  t: Translations;
+  locale: Locale;
+  page: SitePage;
+}
+
+const { t, locale, page } = Astro.props;
+const basePath = import.meta.env.BASE_URL;
+const siteUrl = Astro.site?.href ?? Astro.url.origin;
+const logoHref = getHomeUrl(siteUrl, locale, basePath);
+
+const locales = [
+  { code: 'en', Flag: FlagEn, label: 'English' },
+  { code: 'pl', Flag: FlagPl, label: 'Polski' },
+  { code: 'fi', Flag: FlagFi, label: 'Suomi' },
+] as const;
+
+const navItems = [
+  { key: 'about', sectionId: 'about' },
+  { key: 'services', sectionId: 'services' },
+  { key: 'situations', sectionId: 'situations' },
+  { key: 'expertise', sectionId: 'expertise' },
+  { key: 'process', sectionId: 'process' },
+  { key: 'contact', sectionId: 'contact' },
+] as const;
+---
+
+<header class="site-nav site-nav--over-hero" id="site-nav">
+  <div class="container nav-inner">
+    <a href={logoHref} class="nav-logo" aria-label="Home">
+      <RubyconLogo />
+      <span class="nav-logo-text">rubycon</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      {navItems.map((item) => (
+        <a
+          href={getHomeSectionUrl(siteUrl, locale, item.sectionId, basePath)}
+          class="nav-link"
+          data-nav={item.key}
+        >
+          {t.nav[item.key]}
+        </a>
+      ))}
+    </nav>
+
+    <div class="nav-actions">
+      <ThemeToggle t={t} />
+
+      <div class="lang-switcher" role="group" aria-label="Language">
+        {locales.map(({ code, Flag, label }) => (
+          <a
+            href={getLanguageSwitcherUrl(siteUrl, code, page, basePath)}
+            class="lang-btn"
+            aria-current={code === locale ? 'page' : undefined}
+            aria-label={label}
+            title={label}
+          >
+            <Flag />
+            <span class="lang-code">{code.toUpperCase()}</span>
+          </a>
+        ))}
+      </div>
+
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg class="nav-toggle-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path class="nav-toggle-line nav-toggle-line-top" d="M5 7h14" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+          <path class="nav-toggle-line nav-toggle-line-mid" d="M5 12h14" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+          <path class="nav-toggle-line nav-toggle-line-bot" d="M5 17h14" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="nav-mobile" id="nav-mobile" hidden>
+    {navItems.map((item) => (
+      <a
+        href={getHomeSectionUrl(siteUrl, locale, item.sectionId, basePath)}
+        class="nav-mobile-link"
+        data-nav={item.key}
+      >
+        {t.nav[item.key]}
+      </a>
+    ))}
+  </div>
+</header>
+
+<style>
+  .site-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    height: var(--nav-height);
+    background: var(--nav-surface);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--nav-border);
+    transition:
+      background 0.25s ease,
+      border-color 0.25s ease,
+      backdrop-filter 0.25s ease,
+      color 0.25s ease;
+  }
+
+  .site-nav--over-hero {
+    background: var(--nav-over-hero-bg);
+    border-bottom-color: var(--nav-over-hero-border);
+  }
+
+  .site-nav--over-hero .nav-logo,
+  .site-nav--over-hero .nav-logo-text {
+    color: var(--nav-ink);
+  }
+
+  .site-nav--over-hero .nav-logo :global(.logo-mark) {
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+  }
+
+  .site-nav--over-hero .nav-link {
+    color: var(--nav-muted);
+  }
+
+  .site-nav--over-hero .nav-link:hover,
+  .site-nav--over-hero .nav-link.active {
+    color: var(--nav-ink);
+    background: var(--nav-hover-bg);
+  }
+
+  .site-nav--over-hero .lang-switcher {
+    background: var(--nav-chip-bg);
+    border-color: var(--nav-border);
+  }
+
+  .site-nav--over-hero .lang-btn {
+    color: var(--nav-muted);
+  }
+
+  .site-nav--over-hero .lang-btn:hover,
+  .site-nav--over-hero .lang-btn[aria-current='page'] {
+    color: var(--nav-ink);
+    background: var(--nav-active-bg);
+  }
+
+  .site-nav--over-hero .nav-toggle {
+    color: var(--nav-ink);
+    background: var(--nav-chip-bg);
+    border-color: var(--nav-border);
+  }
+
+  .site-nav--over-hero .nav-toggle:hover {
+    background: var(--nav-chip-hover-bg);
+    border-color: var(--border-hover);
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    gap: 1rem;
+  }
+
+  .nav-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--nav-ink);
+    letter-spacing: -0.02em;
+  }
+
+  .nav-logo :global(.logo-mark) {
+    display: inline-flex;
+    width: 1.625rem;
+    height: 1.625rem;
+    flex-shrink: 0;
+  }
+
+  .nav-logo :global(.logo-mark svg) {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .nav-logo-text {
+    line-height: 1;
+  }
+
+  .nav-logo:hover {
+    opacity: 1;
+    color: var(--accent);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 0.125rem;
+  }
+
+  .nav-link,
+  .nav-mobile-link {
+    font-family: var(--font-nav);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+
+  .nav-link {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    color: var(--nav-muted);
+    border-radius: var(--radius-sm);
+    transition:
+      color 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--nav-ink);
+    background: var(--nav-hover-bg);
+    opacity: 1;
+  }
+
+  .nav-link.active {
+    font-weight: 600;
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .lang-switcher {
+    display: flex;
+    gap: 0.125rem;
+    padding: 0.125rem;
+    background: var(--nav-chip-bg);
+    border: 1px solid var(--nav-border);
+    border-radius: var(--radius-sm);
+  }
+
+  .lang-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3rem 0.45rem;
+    font-family: var(--font-sans);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--nav-muted);
+    background: transparent;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+      color 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .lang-code {
+    line-height: 1;
+  }
+
+  .lang-btn:hover {
+    color: var(--nav-ink);
+  }
+
+  .lang-btn[aria-current='page'] {
+    color: var(--nav-ink);
+    background: var(--nav-active-bg);
+  }
+
+  .nav-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0;
+    color: var(--nav-ink);
+    background: var(--nav-chip-bg);
+    border: 1px solid var(--nav-border);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition:
+      background 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  .nav-toggle:hover {
+    background: var(--nav-chip-hover-bg);
+    border-color: var(--border-hover);
+  }
+
+  .nav-toggle-icon {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+
+  .nav-toggle-line {
+    transform-origin: center;
+    transition:
+      transform 0.2s ease,
+      opacity 0.2s ease;
+  }
+
+  .nav-toggle[aria-expanded='true'] .nav-toggle-line-top {
+    transform: translateY(5px) rotate(45deg);
+  }
+
+  .nav-toggle[aria-expanded='true'] .nav-toggle-line-mid {
+    opacity: 0;
+  }
+
+  .nav-toggle[aria-expanded='true'] .nav-toggle-line-bot {
+    transform: translateY(-5px) rotate(-45deg);
+  }
+
+  .nav-mobile {
+    display: none;
+    flex-direction: column;
+    padding: 0.75rem 1.5rem 1rem;
+    background: var(--nav-mobile-bg);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-mobile[hidden] {
+    display: none !important;
+  }
+
+  .nav-mobile-link {
+    padding: 0.75rem 0;
+    font-size: 0.9375rem;
+    color: var(--nav-muted);
+    border-bottom: 1px solid var(--nav-border);
+    transition: color 0.2s ease;
+  }
+
+  .nav-mobile-link:hover,
+  .nav-mobile-link.active {
+    color: var(--nav-ink);
+    opacity: 1;
+  }
+
+  .nav-mobile-link.active {
+    font-weight: 600;
+  }
+
+  .nav-mobile-link:last-child {
+    border-bottom: none;
+  }
+
+  @media (max-width: 900px) {
+    .nav-links {
+      display: none;
+    }
+
+    .nav-toggle {
+      display: flex;
+    }
+
+    .nav-mobile:not([hidden]) {
+      display: flex;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .lang-code {
+      display: none;
+    }
+
+    .lang-btn {
+      padding: 0.35rem 0.4rem;
+    }
+  }
+</style>
+
+<script>
+  import { initThemeToggle } from '../scripts/theme';
+
+  initThemeToggle();
+
+  const toggle = document.getElementById('nav-toggle');
+  const mobile = document.getElementById('nav-mobile');
+
+  toggle?.addEventListener('click', () => {
+    const expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!expanded));
+    mobile?.toggleAttribute('hidden', expanded);
+  });
+
+  mobile?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      toggle?.setAttribute('aria-expanded', 'false');
+      mobile?.setAttribute('hidden', '');
+    });
+  });
+</script>

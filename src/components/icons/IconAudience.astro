@@ -1,0 +1,21 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<svg class:list={['card-meta-icon-svg', className]} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+  <circle cx="9" cy="8.5" r="2.75" stroke="currentColor" stroke-width="1.75"/>
+  <path d="M4.5 17.5c.8-2.4 2.6-3.75 4.5-3.75s3.7 1.35 4.5 3.75" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+  <path d="M16 8.5h4M18 6.5v4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+</svg>
+
+<style>
+  .card-meta-icon-svg {
+    width: 1rem;
+    height: 1rem;
+    display: block;
+  }
+</style>

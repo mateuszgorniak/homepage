@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://rubycon.fi/</loc>
+    <lastmod>2026-07-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rubycon.fi/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://rubycon.fi/pl/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://rubycon.fi/fi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rubycon.fi/" />
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://rubycon.fi/pl/</loc>
+    <lastmod>2026-07-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rubycon.fi/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://rubycon.fi/pl/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://rubycon.fi/fi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rubycon.fi/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://rubycon.fi/fi/</loc>
+    <lastmod>2026-07-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rubycon.fi/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://rubycon.fi/pl/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://rubycon.fi/fi/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rubycon.fi/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://rubycon.fi/privacy/</loc>
+    <lastmod>2026-07-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rubycon.fi/privacy/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://rubycon.fi/pl/privacy/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://rubycon.fi/fi/privacy/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rubycon.fi/privacy/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://rubycon.fi/pl/privacy/</loc>
+    <lastmod>2026-07-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rubycon.fi/privacy/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://rubycon.fi/pl/privacy/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://rubycon.fi/fi/privacy/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rubycon.fi/privacy/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://rubycon.fi/fi/privacy/</loc>
+    <lastmod>2026-07-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rubycon.fi/privacy/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://rubycon.fi/pl/privacy/" />
+    <xhtml:link rel="alternate" hreflang="fi" href="https://rubycon.fi/fi/privacy/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rubycon.fi/privacy/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://rubycon.fi/llms.txt</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+</urlset>

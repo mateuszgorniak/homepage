@@ -1,0 +1,11 @@
+---
+import mark from '../assets/logo/rubycon-mark.svg?raw';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = 'logo-mark' } = Astro.props;
+---
+
+<span class={className} set:html={mark} aria-hidden="true" />

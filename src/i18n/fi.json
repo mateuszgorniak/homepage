@@ -1,0 +1,402 @@
+{
+  "meta": {
+    "title": "Verkkosovelluskehitys | Mateusz Górniak · RubyCon",
+    "description": "Ruby on Rails -kehittäjä ja fractional CTO Suomessa - etänä EU:ssa. Verkkosovellukset, SaaS, legacy-migraatiot ja senior-tason tekninen tuki startupeille ja tuotetiimeille."
+  },
+  "nav": {
+    "about": "Tietoa",
+    "services": "Palvelut",
+    "situations": "Milloin kirjoittaa",
+    "expertise": "Alueet",
+    "process": "Prosessi",
+    "contact": "Yhteystiedot"
+  },
+  "seo": {
+    "knowsAbout": [
+      "Verkkosovelluskehitys",
+      "Ruby on Rails -kehitys",
+      "Murto-os CTO",
+      "Murto-os kehittäjä",
+      "SaaS-kehitys",
+      "Legacy-migraatio",
+      "Järjestelmäarkkitehtuuri",
+      "API-suunnittelu"
+    ]
+  },
+  "theme": {
+    "dark": "Vaihda tummaan tilaan",
+    "light": "Vaihda vaaleaan tilaan"
+  },
+  "hero": {
+    "windowTitle": "mateusz@rubycon: zsh",
+    "label": "Verkkosovellukset · backend",
+    "headline": "Rakennan verkkosovelluksia, joihin käyttäjät voivat luottaa.",
+    "subline": "Räätälöityä ohjelmistoa MVP:stä tuotantoon. Käytännön kehitys ja arkkitehtuuri tai fractional CTO -tuki, kun tiimi tarvitsee senioria.",
+    "cta": "Ota yhteyttä",
+    "ctaSecondary": "Lue lisää",
+    "commands": [
+      {
+        "cmd": "whoami",
+        "output": "mateusz\nrole: backend · fractional CTO\nstyle: kirjoittaa koodia, lukee tilanteen",
+        "tone": "profile"
+      },
+      {
+        "cmd": "date +%Z",
+        "output": "tz: Europe/Helsinki\ncountry: Suomi\n{{flag}}\nwork: etä · joustava",
+        "tone": "profile"
+      },
+      { "cmd": "echo $ROLE", "output": "hands-on backend · tekninen johtaminen tarpeen mukaan", "tone": "info" },
+      { "cmd": "cat stack.txt", "output": "Ruby · Rails · PostgreSQL · Redis", "tone": "stack" },
+      {
+        "cmd": "./mission.sh",
+        "output": "[ok] backend, joka toimii kun käyttäjät tulevat\n[ok] vaikeat arkkitehtuuripäätökset hoidossa heti\n[ok] päivitykset, joita koko tiimi ymmärtää\n[ok] tasainen tahti voittaa viikonloppusankarit\n[ok] kun tuotanto horjuu, korjataan systeemi eikä vain oire",
+        "tone": "success"
+      },
+      {
+        "cmd": "./check_availability.sh",
+        "output": "[ok] otan vastaan uusia projekteja",
+        "tone": "success",
+        "interactive": {
+          "prelude": "> tarkistan kalenterin...",
+          "prompt": "> aloitetaanko projekti? [K/e]",
+          "answer": "k",
+          "waitMs": 2400
+        }
+      }
+    ]
+  },
+  "about": {
+    "label": "Tietoa",
+    "title": "Kehittäjä, jolla on CTO-kokemusta",
+    "photoAlt": "Mateusz Górniak",
+    "lead": "Rakennan ja johdan verkkosovelluksia backend-koodista teknologiapäätöksiin.",
+    "paragraphs": [
+      "Yli 14 vuotta verkkotuotteiden rakentamista ja johtamista. Verkkokehittäjä, jolla on kokemusta insinööritiimien johtamisesta CTO:n roolissa - kirjoitan koodia ja valitsen teknologiat, jotka sopivat liiketoimintaan.",
+      "Työskentelen startupien, tuoteyritysten ja tuoteagentuurien kanssa, jotka tarvitsevat senior-tason apua ilman kokopäiväistä palkkausta: ominaisuuksien toimitus, arkkitehtuurin arviointi tai vaikea migraatio."
+    ]
+  },
+  "services": {
+    "label": "Palvelut",
+    "title": "Miten voin auttaa",
+    "lead": "Verkkosovellusprojektit ja jatkuva tuotekehitys-tiimeille, jotka tarvitsevat senior-kehittäjää ilman kokopäiväistä palkkausta.",
+    "bestForLabel": "Parhaiten",
+    "items": [
+      {
+        "title": "Verkkosovelluskehitys",
+        "summary": "Suunnittelen ja rakennan verkkosovelluksia ensimmäisestä julkaisusta pitkäaikaiseen tuotetyöhön.",
+        "bestFor": "Perustajat ja product ownerit",
+        "points": [
+          {
+            "title": "MVP:t ja uudet tuotteet",
+            "detail": "Vien sinut ensimmäisestä prototyypistä versioon, jota voit demonstroida, antaa käyttäjille ja kehittää eteenpäin."
+          },
+          {
+            "title": "Ominaisuudet olemassa oleviin sovelluksiin",
+            "detail": "Toimitan uusia ominaisuuksia live-sovellukseen - nykyinen toiminta säilyy, tuote etenee."
+          },
+          {
+            "title": "SaaS ja sisäiset työkalut",
+            "detail": "Rakennan backendin tilaustuotteellesi tai sisäiselle työkalulle - se pysyy luotettavana käytön kasvaessa."
+          },
+          {
+            "title": "Integraatiot kolmansien osapuolten palveluihin",
+            "detail": "Yhdistän puolestasi maksut, sähköpostin, CRM:n ja muut palvelut - ja pidän integraatiot kunnossa."
+          }
+        ]
+      },
+      {
+        "title": "Fractional Developer",
+        "summary": "Liityn tiimiin senior-kehittäjänä, kun tarvitsette lisää käsiä koodipohjaan.",
+        "bestFor": "Engineering managerit ja product leadit",
+        "points": [
+          {
+            "title": "Backend-kehitys ja API-suunnittelu",
+            "detail": "Kirjoitan ydinlogiikan ja API:t, joihin tuote nojaa - tiimisi voi rakentaa nopeammin päälle."
+          },
+          {
+            "title": "Koodikatselmointi ja laatu",
+            "detail": "Katselmoin koodia tiimisi kanssa - näet vähemmän yllätyksiä tuotannossa ja siistimpiä julkaisuja."
+          },
+          {
+            "title": "Tiimin mentorointi",
+            "detail": "Työskentelen kehittäjiesi rinnalla - näet heidän kasvavan taidoissa ja itsenäisyydessä."
+          },
+          {
+            "title": "Tuotanto-ongelmien debuggaus",
+            "detail": "Debuggaan live-ongelmia kanssasi - saat juurisyyn korjauksen, et väliaikaista paikkaa."
+          }
+        ]
+      },
+      {
+        "title": "Fractional CTO",
+        "summary": "Johdan teknologiaa ilman kokopäiväistä roolia.",
+        "bestFor": "Perustajat ja toimitusjohtajat",
+        "points": [
+          {
+            "title": "Roadmap ja arkkitehtuuri",
+            "detail": "Autan asettamaan teknisen suunnan liiketoimintatavoitteidesi mukaan - saat roadmapin, jota voi oikeasti seurata."
+          },
+          {
+            "title": "Tiimirakenne ja rekrytointi",
+            "detail": "Autan rakentamaan tiimin ja rekrytoimaan - tiedät, ketä etsiä ja miten työ kannattaa jakaa."
+          },
+          {
+            "title": "Legacy-järjestelmien arviointi",
+            "detail": "Arvioin legacy-järjestelmän kanssasi - saat selkeän suunnitelman: mitä pitää, vaihtaa tai siirtää vaiheittain."
+          },
+          {
+            "title": "Build vs. buy -päätökset",
+            "detail": "Käymme build vs. buy -päätökset läpi - teet valintoja, joihin voit myöhemmin nojata."
+          }
+        ]
+      }
+    ]
+  },
+  "stack": {
+    "label": "Stack",
+    "title": "Teknologiat, joilla työskentelen",
+    "subtitle": "Teknisille lukijoille",
+    "lead": "Teknologiat, joita käytän useimmin - valittu ylläpidettävyyden, ei hypen perusteella. Ruby on vahvin alueeni.",
+    "primaryLabel": "Päästack",
+    "primary": [
+      {
+        "name": "Ruby",
+        "tip": "Nopea rakentaa ja helppo muuttaa. Hyvä valinta MVP:lle ja tuotteille, jotka kehittyvät nopeasti."
+      },
+      {
+        "name": "Rails",
+        "tip": "Toimittaa ominaisuuksia vähemmällä liimakoodilla. Alempi ylläpitokustannus ja laaja osaajapooli."
+      },
+      {
+        "name": "PostgreSQL",
+        "tip": "Luotettava tietokanta, joka skaalautuu liiketoiminnan mukana. Ei tarvetta vaihtaa varhain."
+      },
+      {
+        "name": "Redis",
+        "tip": "Pitää sovelluksen nopeana kuormituksessa. Välimuisti ja lyhytaikainen data ilman hidastelua."
+      },
+      {
+        "name": "Sidekiq",
+        "tip": "Taustatyöt: sähköpostit, raportit, importit. Sovellus vastaa heti, työ jatkuu taustalla."
+      }
+    ],
+    "alsoLabel": "Myös tuttuja",
+    "also": [
+      {
+        "name": "TypeScript",
+        "tip": "Ottaa virheet kiinni ennen tuotantoa. Turvallisemmat refaktoroinnit kasvavassa koodissa."
+      },
+      {
+        "name": "Node.js",
+        "tip": "Sopii API:hin ja työkaluihin, kun tiimi työskentelee jo JavaScriptillä."
+      },
+      {
+        "name": "Python",
+        "tip": "Integraatiot, data ja yhteydet AI- tai ML-palveluihin."
+      },
+      {
+        "name": "Docker",
+        "tip": "Sama ympäristö devissä ja tuotannossa. Vähemmän yllätyksiä deployn yhteydessä."
+      },
+      {
+        "name": "AWS",
+        "tip": "Hosting, joka kasvaa tuotteen mukana. Palvelut päälle vain kun niitä tarvitaan."
+      },
+      {
+        "name": "Stripe",
+        "tip": "Maksut, tilaukset ja laskutus, jotka pysyvät luotettavina tuotteen kasvaessa."
+      },
+      {
+        "name": "Elasticsearch",
+        "tip": "Haku ja suodatus, jotka pysyvät nopeina datan ja käyttäjämäärän kasvaessa."
+      },
+      {
+        "name": "GitHub Actions",
+        "tip": "Automaattiset testit ja deployt, jotta julkaisut ovat toistettavia eivätkä hermostuttavia."
+      },
+      {
+        "name": "OpenAI",
+        "tip": "Käytännön AI-ominaisuudet tuotannossa, rajauksilla ja tarkistuksella ennen käyttäjiä."
+      }
+    ],
+    "note": "Voin liittyä olemassa olevaan stackiin tai auttaa valitsemaan teknologiat uuteen projektiin."
+  },
+  "situations": {
+    "title": "Milloin ottaa yhteyttä",
+    "lead": "Kuulostaako jokin tutulta? Ota yhteyttä!",
+    "items": [
+      "Tarvitset MVP:n, joka toimii luotettavasti demossa tai varhaisessa palautteessa.",
+      "Tuote toimii, mutta jokainen julkaisu tuntuu stressaavalta.",
+      "Kaipaat senior-ääntä arkkitehtuuriin ja roadmapiin ilman kokopäiväistä CTO:ta.",
+      "Vanha järjestelmä tekee jokaisesta uudesta ominaisuudesta kalliin tai riskialttiin."
+    ]
+  },
+  "expertise": {
+    "title": "Alueet, joissa autan",
+    "lead": "Alueet, joissa tuon eniten arvoa - arkkitehtuurista tuotannon vakauteen.",
+    "items": [
+      {
+        "id": "architecture",
+        "name": "Järjestelmäarkkitehtuuri",
+        "summary": "Järjestelmät, joita voi laajentaa ilman kaiken uudelleenkirjoitusta.",
+        "tip": "Suunnittelen järjestelmän alusta tai johdan olemassa olevaa projektia niin, että sitä voi laajentaa ilman uudelleenkirjoitusta, palvelinkustannukset pysyvät kurissa ja skaalaus onnistuu, kun liikenne kasvaa."
+      },
+      {
+        "id": "leadership",
+        "name": "Tiimijohtaminen",
+        "summary": "Tiimit, jotka toimittavat ilman yhden henkilön riippuvuutta.",
+        "tip": "Autan rakentamaan tiimin, sopimaan miten koodia kirjoitetaan ja reviewataan, kehittämään ihmisiä ja tukemaan rekrytointia - jotta toimitus ei riipu yhdestä kehittäjästä."
+      },
+      {
+        "id": "backend",
+        "name": "Backend-kehitys",
+        "summary": "Luotettava ydinlogiikka, tietokannat ja taustatyöt.",
+        "tip": "Kirjoitan sovelluksen ydinlogiikan: liiketoimintalogiikan, tietokannat, taustatyöt. Kerroksen, joka pitää toimia luotettavasti joka päivä."
+      },
+      {
+        "id": "api",
+        "name": "API-suunnittelu",
+        "summary": "Selkeät rajapinnat tuotteelle ja kumppaneille.",
+        "tip": "Suunnittelen API:t, joihin frontend ja kumppanit voivat nojata ilman yllätyksiä tuotteen kasvaessa."
+      },
+      {
+        "id": "monitoring",
+        "name": "Monitorointi ja data",
+        "summary": "Näet mitä tuotannossa tapahtuu ennen kuin käyttäjät valittavat.",
+        "tip": "Rakennan monitoroinnin, jotta emme arvaile mitä tuotannossa tapahtuu. Bugit nousevat nopeasti esiin, trendit näkyvät datasta, ja SLO:t sekä pullonkaulat havaitaan ennen kuin käyttäjät huomaavat."
+      },
+      {
+        "id": "reliability",
+        "name": "Luotettavuus ja tuotanto",
+        "summary": "Live-järjestelmät, jotka pysyvät vakaina oikeassa liikenteessä.",
+        "tip": "Pidän live-järjestelmät vakaina: monitorointi, häiriöihin reagointi ja vähemmän yllätyksiä käyttäjille ja liiketoiminnalle."
+      },
+      {
+        "id": "security",
+        "name": "Turvallisuus ja yksityisyys (EU)",
+        "summary": "Järkevä turvallisuus ja GDPR-tietoiset valinnat, suhteutettuna tuotteeseen ja laajuuteen.",
+        "tip": "Käytännön turvallisuus verkkotuotteille: pääsynhallinta, datankäsittely ja yksityisyysvalinnat EU-odotusten mukaisesti - ilman toimituksen hidastamista."
+      },
+      {
+        "id": "legacy",
+        "name": "Legacy-migraatiot",
+        "summary": "Eteenpäin askel askeleelta ilman liiketoiminnan pysäyttämistä.",
+        "tip": "Siirrän vanhoja järjestelmiä vaiheittain. Liiketoiminta pyörii, riski pienenee, ei yhtä isoa uudelleenkirjoitusta kerralla."
+      },
+      {
+        "id": "ai",
+        "name": "AI-avusteinen kehitys",
+        "summary": "Nopeampi toimitus AI-työkaluilla, ihmisen tarkistuksella ennen tuotantoa.",
+        "tip": "Käytän AI:ta siellä, missä se säästää minulta oikeaa aikaa, ja tarkistan itse mitä menee tuotantoon."
+      }
+    ]
+  },
+  "faq": {
+    "label": "UKK",
+    "title": "Usein kysytyt kysymykset",
+    "items": [
+      {
+        "question": "Mitä fractional CTO tarkoittaa?",
+        "answer": "Osa-aikainen tai projektipohjainen teknologiajohtaminen: arkkitehtuuri, roadmap, rekrytointineuvot ja senior-päätökset - ilman kokopäiväistä johtajaa."
+      },
+      {
+        "question": "Työskenteletkö vain Rubyn kanssa?",
+        "answer": "Ruby on Rails on päästackini ja siinä toimitan nopeimmin. Voin liittyä olemassa olevaan stackiin tai auttaa valitsemaan teknologiat uuteen projektiin - tavoitteena ylläpidettävä ohjelmisto, ei dogma."
+      },
+      {
+        "question": "Voitko työskennellä etänä Suomesta?",
+        "answer": "Kyllä. Olen Suomessa (Europe/Helsinki) ja työskentelen etänä Eurooppaan hajautuneiden tiimien kanssa. Aikavyöhykkeet ja async-yhteistyö ovat minulle arkipäivää."
+      },
+      {
+        "question": "Miten yhteistyö alkaa?",
+        "answer": "Lähetä sähköpostia lyhyellä kuvauksella tilanteestasi. Aloitamme yleensä puhelulla tavoitteista ja rajoitteista, sitten sovimme laajuudesta ja seuraavista askelista."
+      },
+      {
+        "question": "Millaisia tuotteita rakennat?",
+        "answer": "Verkkosovelluksia, SaaS:ia, sisäisiä työkaluja ja monen osapuolen alustoja - MVP:stä pitkään pyörivään tuotantoon. Keskityn backendiin ja arkkitehtuuriin; frontendin usein hoitaa tiimisi tai kumppanit."
+      },
+      {
+        "question": "Miten hoidat turvallisuuden ja yksityisyyden?",
+        "answer": "Järkevät oletukset pääsylle, datalle ja lokitukselle - GDPR-tietoisesti siellä, missä on henkilötietoja. Suhteutettuna tuotteeseen ja laajuuteen."
+      }
+    ]
+  },
+  "howIWork": {
+    "label": "Prosessi",
+    "title": "Miten työskentelen",
+    "lead": "Liiketoimintatavoitteet ensin, sitten tekninen suunnitelma.",
+    "steps": [
+      {
+        "title": "Arviointi",
+        "text": "Koodipohja, tiimi, rajoitteet ja se, miltä menestys näyttää liiketoiminnan kannalta."
+      },
+      {
+        "title": "Suunnittelu",
+        "text": "Yhteinen tekninen linja realistisine välitavoitteineen. Ilman turhaa monimutkaisuutta."
+      },
+      {
+        "title": "Toteutus",
+        "text": "Säännölliset päivitykset, toimiva ohjelmisto ja tiedon siirto tiimille."
+      }
+    ]
+  },
+  "contact": {
+    "label": "Yhteystiedot",
+    "title": "Keskustellaan",
+    "lead": "Projekti mielessä tai haluatko katsoa, sopiiko yhteistyö? Lähetä viesti.",
+    "linkedin": "LinkedIn"
+  },
+  "footer": {
+    "businessId": "Y-tunnus",
+    "ytjLink": "Katso YTJ-rekisteristä",
+    "form": "Toiminimi (yksityinen elinkeinonharjoittaja)",
+    "languages": "Kielet: puola (äidinkieli), englanti (ammattitaso), suomi (oppimassa - perustaso)",
+    "rights": "Kaikki oikeudet pidätetään."
+  },
+  "privacy": {
+    "meta": {
+      "title": "Tietosuojaseloste | RubyCon",
+      "description": "Miten RubyCon käsittelee tietoja tällä sivustolla: ei analytiikkaa, teeman valinta ja yhteystiedot."
+    },
+    "title": "Tietosuojaseloste",
+    "updated": "Päivitetty: heinäkuu 2026",
+    "controller": {
+      "title": "Rekisterinpitäjä",
+      "nameLabel": "Nimi",
+      "name": "Mateusz Górniak (RubyCon)",
+      "formLabel": "Yritysmuoto",
+      "form": "Suomalainen toiminimi",
+      "emailLabel": "Sähköposti"
+    },
+    "rightsBrowserNote": "Voit tyhjentää sivuston tiedot selaimen asetuksista.",
+    "sections": [
+      {
+        "id": "collection",
+        "title": "Mitä sivusto kerää",
+        "body": "Sivusto ei käytä analytiikkaa tai mainosseurantaa. Fontit tarjoillaan tältä sivustolta, ei kolmansilta osapuolilta. Valitsemasi vaalea tai tumma teema tallennetaan selaimeen (localStorage). Jos lähetät sähköpostia, saan tiedot, jotka itse jaat."
+      },
+      {
+        "id": "rights",
+        "title": "Oikeutesi",
+        "body": "Voit pyytää tietojesi tarkastusta tai poistoa sähköpostitse:"
+      },
+      {
+        "id": "changes",
+        "title": "Muutokset",
+        "body": "Seloste voidaan päivittää. Ajantasainen versio on aina tällä sivulla."
+      }
+    ],
+    "backHome": "Takaisin etusivulle"
+  },
+  "notFound": {
+    "title": "Sivua ei löytynyt",
+    "lead": "Täällä ei ole tällaista sisältöä.",
+    "scenery": "Koska eksyit tänne, voit ihastella suomalaista maisemaa - järveä, metsää ja hiljaisuutta.",
+    "homeCta": "Takaisin etusivulle",
+    "homeLinksLabel": "Tai valitse kieli:",
+    "imageAlt": "Piirros suomalaisesta järvestä ja mäntymetsästä",
+    "home": "English",
+    "homePl": "Polski",
+    "homeFi": "Suomi"
+  }
+}

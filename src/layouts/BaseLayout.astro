@@ -1,0 +1,123 @@
+---
+import '../styles/fonts.css';
+import '../styles/global.css';
+import '../styles/window-ui.css';
+import '../styles/icons.css';
+import SiteNav from '../components/SiteNav.astro';
+import type { Locale, Translations } from '../i18n';
+import { defaultLocale, getTranslations, locales } from '../i18n';
+import { buildStructuredData } from '../lib/structured-data';
+import {
+  detectSitePage,
+  getAllLocaleUrls,
+  getAllPrivacyUrls,
+  ogLocaleCodes,
+  type SitePage,
+} from '../lib/locale-urls';
+import {
+  OG_IMAGE_HEIGHT,
+  OG_IMAGE_PATH,
+  OG_IMAGE_WIDTH,
+} from '../config/site';
+
+interface Props {
+  locale?: Locale;
+  t?: Translations;
+  title?: string;
+  description?: string;
+  robots?: string;
+  page?: SitePage;
+}
+
+const locale = Astro.props.locale ?? defaultLocale;
+const t = Astro.props.t ?? getTranslations(locale);
+const title = Astro.props.title ?? t.meta.title;
+const description = Astro.props.description ?? t.meta.description;
+const robots = Astro.props.robots ?? 'index, follow';
+const page = Astro.props.page ?? detectSitePage(Astro.url.pathname);
+const siteUrl = Astro.site?.href ?? 'https://rubycon.fi/';
+const basePath = import.meta.env.BASE_URL;
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
+const localeUrls = page === 'privacy'
+  ? getAllPrivacyUrls(siteUrl, basePath)
+  : getAllLocaleUrls(siteUrl, basePath);
+const structuredData = buildStructuredData(t, siteUrl, locale, canonicalUrl);
+const ogLocale = ogLocaleCodes[locale];
+const ogImageUrl = `${siteUrl.replace(/\/$/, '')}${OG_IMAGE_PATH}`;
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <script is:inline>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var theme =
+            stored === 'light' || stored === 'dark'
+              ? stored
+              : window.matchMedia('(prefers-color-scheme: dark)').matches
+                ? 'dark'
+                : 'light';
+          document.documentElement.dataset.theme = theme;
+        } catch (e) {}
+        document.documentElement.classList.add('js');
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="author" content="Mateusz Górniak" />
+    <meta name="robots" content={robots} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href={`${import.meta.env.BASE_URL}sitemap.xml`} />
+    {
+      locales.map((alt) => (
+        <link rel="alternate" hreflang={alt} href={localeUrls[alt]} />
+      ))
+    }
+    <link rel="alternate" hreflang="x-default" href={localeUrls[defaultLocale]} />
+    <link rel="icon" href={`${import.meta.env.BASE_URL}favicon.ico`} sizes="48x48" />
+    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+    <link rel="icon" type="image/png" sizes="32x32" href={`${import.meta.env.BASE_URL}favicon-32x32.png`} />
+    <link rel="icon" type="image/png" sizes="16x16" href={`${import.meta.env.BASE_URL}favicon-16x16.png`} />
+    <link rel="apple-touch-icon" sizes="180x180" href={`${import.meta.env.BASE_URL}apple-touch-icon.png`} />
+    <link rel="manifest" href={`${import.meta.env.BASE_URL}site.webmanifest`} />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f4f7fb" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b1017" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="RubyCon" />
+    <meta property="og:locale" content={ogLocale} />
+    {
+      locales
+        .filter((alt) => alt !== locale)
+        .map((alt) => <meta property="og:locale:alternate" content={ogLocaleCodes[alt]} />)
+    }
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content={String(OG_IMAGE_WIDTH)} />
+    <meta property="og:image:height" content={String(OG_IMAGE_HEIGHT)} />
+    <meta property="og:image:alt" content="RubyCon - web application development by Mateusz Górniak" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <title>{title}</title>
+
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <div class="page-wrapper">
+      <SiteNav t={t} locale={locale} page={page} />
+      <main id="main">
+        <slot />
+      </main>
+    </div>
+  </body>
+</html>

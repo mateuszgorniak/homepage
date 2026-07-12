@@ -1,0 +1,37 @@
+# RubyCon
+
+> Finnish sole proprietorship - custom web application development, fractional developer and fractional CTO services by Mateusz Górniak. Based in Finland, working remotely across the EU.
+
+## Main pages
+
+- [English homepage](https://rubycon.fi/): Web application developer and fractional CTO site in English
+- [Polish homepage](https://rubycon.fi/pl/): Polish version of the site
+- [Finnish homepage](https://rubycon.fi/fi/): Finnish version of the site
+
+## Services
+
+- Custom web application development (MVP to production)
+- Backend development and API design
+- Fractional developer and fractional CTO support
+- Legacy migrations and architecture review
+- Production reliability, monitoring, and sensible EU security practices
+
+## Typical client situations
+
+- Building an MVP before investors or first customers
+- Product works but development feels slow or risky
+- Need a senior technical voice without a full-time CTO
+- Legacy system blocking new features
+- Multi-sided platforms and SaaS products
+
+## Contact
+
+- Email: contact@rubycon.fi
+- LinkedIn: https://www.linkedin.com/in/mateusz-g%C3%B3rniak/
+- Business register (YTJ, Finland): https://tietopalvelu.ytj.fi/yritys/3597173-9
+
+## Technical
+
+- Sitemap: https://rubycon.fi/sitemap.xml
+- Languages: English (default), Polish, Finnish
+- Working languages: Polish (native), English (professional), Finnish (learning - basic)

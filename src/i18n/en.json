@@ -1,0 +1,402 @@
+{
+  "meta": {
+    "title": "Web Application Developer | Mateusz Górniak · RubyCon",
+    "description": "Ruby on Rails developer and fractional CTO in Finland - remote across the EU. Custom web apps, SaaS, legacy migrations, and senior technical leadership for startups and product teams."
+  },
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "situations": "When to call",
+    "expertise": "Areas",
+    "process": "Process",
+    "contact": "Contact"
+  },
+  "seo": {
+    "knowsAbout": [
+      "Web application development",
+      "Ruby on Rails development",
+      "Fractional CTO",
+      "Fractional developer",
+      "SaaS development",
+      "Legacy migration",
+      "System architecture",
+      "API design"
+    ]
+  },
+  "theme": {
+    "dark": "Switch to dark mode",
+    "light": "Switch to light mode"
+  },
+  "hero": {
+    "windowTitle": "mateusz@rubycon: zsh",
+    "label": "Web applications · backend",
+    "headline": "I build web applications your users can rely on.",
+    "subline": "Custom software from MVP to production. Hands-on development and architecture or fractional CTO support when your team needs a senior lead.",
+    "cta": "Get in touch",
+    "ctaSecondary": "Learn more",
+    "commands": [
+      {
+        "cmd": "whoami",
+        "output": "mateusz\nrole: backend · fractional CTO\nstyle: writes code, reads the room",
+        "tone": "profile"
+      },
+      {
+        "cmd": "date +%Z",
+        "output": "tz: Europe/Helsinki\ncountry: Finland\n{{flag}}\nwork: remote · flexible",
+        "tone": "profile"
+      },
+      { "cmd": "echo $ROLE", "output": "hands-on backend · tech leadership on demand", "tone": "info" },
+      { "cmd": "cat stack.txt", "output": "Ruby · Rails · PostgreSQL · Redis", "tone": "stack" },
+      {
+        "cmd": "./mission.sh",
+        "output": "[ok] backend that stays up when users show up\n[ok] hard architecture calls owned, not parked\n[ok] updates the whole team actually understands\n[ok] reliable rhythm over weekend heroics\n[ok] when prod wobbles, fix the system not the symptom",
+        "tone": "success"
+      },
+      {
+        "cmd": "./check_availability.sh",
+        "output": "[ok] accepting new projects",
+        "tone": "success",
+        "interactive": {
+          "prelude": "> scanning calendar...",
+          "prompt": "> start a project? [Y/n]",
+          "answer": "y",
+          "waitMs": 2400
+        }
+      }
+    ]
+  },
+  "about": {
+    "label": "About",
+    "title": "Developer with a CTO background",
+    "photoAlt": "Mateusz Górniak",
+    "lead": "I build and run web applications, from backend code to technology decisions.",
+    "paragraphs": [
+      "14+ years building and leading web products. Web developer with experience leading engineering teams as a CTO - I write code and make technology choices that fit the business.",
+      "I work with startups, product companies, and product agencies that need senior help without a full-time hire: shipping features, reviewing architecture, or getting through a tough migration."
+    ]
+  },
+  "services": {
+    "label": "Services",
+    "title": "How I can help",
+    "lead": "Web application development and ongoing product work for teams that need a senior developer without a full-time hire.",
+    "bestForLabel": "Best for",
+    "items": [
+      {
+        "title": "Web application development",
+        "summary": "I design and build custom web apps from first release to long-term product work.",
+        "bestFor": "Founders and product owners",
+        "points": [
+          {
+            "title": "MVPs and new product builds",
+            "detail": "I take you from first prototype to something you can demo, put in users' hands, and keep building on."
+          },
+          {
+            "title": "Feature delivery on existing apps",
+            "detail": "I ship new features in your live app - you keep what works today while the product moves forward."
+          },
+          {
+            "title": "SaaS and internal tools",
+            "detail": "I build the backend behind your subscription product or internal tool, so it stays reliable as usage grows."
+          },
+          {
+            "title": "Integrations with third-party services",
+            "detail": "I connect payments, email, CRM, and other services for you - and keep those integrations working over time."
+          }
+        ]
+      },
+      {
+        "title": "Fractional Developer",
+        "summary": "I join your team as a senior developer when you need extra hands in the codebase.",
+        "bestFor": "Engineering managers and product leads",
+        "points": [
+          {
+            "title": "Backend development and API design",
+            "detail": "I write the core logic and APIs your product runs on - your team can build faster on top."
+          },
+          {
+            "title": "Code review and quality improvements",
+            "detail": "I review code with your team - you see fewer surprises in production and cleaner releases over time."
+          },
+          {
+            "title": "Mentoring your team",
+            "detail": "I work alongside your developers - you see them grow skills and ship more independently."
+          },
+          {
+            "title": "Production debugging",
+            "detail": "I debug live issues with you - you get root-cause fixes, not patches that come back next week."
+          }
+        ]
+      },
+      {
+        "title": "Fractional CTO",
+        "summary": "I provide technology leadership without a full-time role.",
+        "bestFor": "Founders and CEOs",
+        "points": [
+          {
+            "title": "Roadmap and architecture",
+            "detail": "I help you set technical direction that matches your business goals - you get a roadmap you can actually follow."
+          },
+          {
+            "title": "Team structure and hiring",
+            "detail": "I help you shape the team and hire - you know who to look for and how to organize the work."
+          },
+          {
+            "title": "Legacy system assessment",
+            "detail": "I assess your legacy system with you - you get a clear plan for what to keep, replace, or migrate step by step."
+          },
+          {
+            "title": "Build vs. buy decisions",
+            "detail": "I walk you through build vs. buy calls - you make decisions you can stand behind later."
+          }
+        ]
+      }
+    ]
+  },
+  "stack": {
+    "label": "Stack",
+    "title": "Technologies I work with",
+    "subtitle": "For technical readers",
+    "lead": "Technologies I use most often - chosen for maintainability, not hype. Ruby is where I'm most at home.",
+    "primaryLabel": "Main stack",
+    "primary": [
+      {
+        "name": "Ruby",
+        "tip": "Fast to build and easy to change. A strong fit for MVPs and products that need to evolve quickly."
+      },
+      {
+        "name": "Rails",
+        "tip": "Ships features with less glue code. Lower maintenance cost and a large pool of developers."
+      },
+      {
+        "name": "PostgreSQL",
+        "tip": "Reliable data storage that scales with the business. No need to swap databases early."
+      },
+      {
+        "name": "Redis",
+        "tip": "Keeps the app fast under load. Handles caching and short-lived data without slowing users down."
+      },
+      {
+        "name": "Sidekiq",
+        "tip": "Background jobs for emails, reports, and imports. The app stays responsive while work runs async."
+      }
+    ],
+    "alsoLabel": "Also worked with",
+    "also": [
+      {
+        "name": "TypeScript",
+        "tip": "Catches bugs before release. Safer refactors as the codebase and team grow."
+      },
+      {
+        "name": "Node.js",
+        "tip": "Good for APIs and tooling when the team already works in JavaScript."
+      },
+      {
+        "name": "Python",
+        "tip": "Useful for integrations, data tasks, and connecting to AI or ML services."
+      },
+      {
+        "name": "Docker",
+        "tip": "Same setup in dev and production. Fewer surprises when you deploy."
+      },
+      {
+        "name": "AWS",
+        "tip": "Hosting that grows with the product. Turn services on when you need them, not before."
+      },
+      {
+        "name": "Stripe",
+        "tip": "Payments, subscriptions, and billing flows that stay reliable as the product grows."
+      },
+      {
+        "name": "Elasticsearch",
+        "tip": "Search and filtering that stays fast as your data and user base grow."
+      },
+      {
+        "name": "GitHub Actions",
+        "tip": "Automated tests and deploys so releases are repeatable, not nerve-wracking."
+      },
+      {
+        "name": "OpenAI",
+        "tip": "Practical AI features in production, with guardrails and review before they reach users."
+      }
+    ],
+    "note": "Happy to join your existing stack or help pick the right one for a new project."
+  },
+  "situations": {
+    "title": "When to call",
+    "lead": "Sound familiar? Get in touch!",
+    "items": [
+      "You need an MVP reliable enough for a demo or early feedback.",
+      "The product works, but every release feels stressful.",
+      "You want a senior voice on architecture and roadmap - without a full-time CTO.",
+      "Legacy makes every new feature expensive or risky to ship."
+    ]
+  },
+  "expertise": {
+    "title": "What I help solve",
+    "lead": "Outcome-first areas where I add the most value - from architecture to production reliability.",
+    "items": [
+      {
+        "id": "architecture",
+        "name": "System architecture",
+        "summary": "Systems you can extend without rewriting everything from scratch.",
+        "tip": "I design systems from scratch or steer existing ones so you can add features without rewriting, server costs stay reasonable, and scaling is straightforward when traffic grows."
+      },
+      {
+        "id": "leadership",
+        "name": "Team leadership",
+        "summary": "Teams that ship without depending on one person.",
+        "tip": "I help shape the team, agree on how you write and review code, mentor people, and support hiring so shipping does not hinge on one developer."
+      },
+      {
+        "id": "backend",
+        "name": "Backend development",
+        "summary": "Reliable core logic, databases, and background jobs.",
+        "tip": "I write the core application code: business logic, databases, background jobs. The layer that has to work reliably every day."
+      },
+      {
+        "id": "api",
+        "name": "API design",
+        "summary": "Clear interfaces for your product and partners.",
+        "tip": "I design APIs your frontend and partners can build against without surprises as the product grows."
+      },
+      {
+        "id": "monitoring",
+        "name": "Monitoring & data",
+        "summary": "Know what happens in production before users complain.",
+        "tip": "I set up monitoring so we are not guessing what happens in production. Bugs surface fast, trends show up in the data, and we track SLOs and spot bottlenecks before users feel them."
+      },
+      {
+        "id": "reliability",
+        "name": "Reliability & production",
+        "summary": "Live systems that stay stable under real traffic.",
+        "tip": "I keep live systems stable: monitoring, incident response, and fewer surprises for users and the business."
+      },
+      {
+        "id": "security",
+        "name": "Security & privacy (EU)",
+        "summary": "Sensible security and GDPR-aware choices, proportionate to your product and scale.",
+        "tip": "Practical security for web products: access control, data handling, and privacy choices that fit EU expectations - without slowing delivery."
+      },
+      {
+        "id": "legacy",
+        "name": "Legacy migrations",
+        "summary": "Move forward step by step without stopping the business.",
+        "tip": "I move old codebases forward step by step. The business keeps running, risk goes down, no big-bang rewrite."
+      },
+      {
+        "id": "ai",
+        "name": "AI-assisted development",
+        "summary": "Faster delivery with AI tools, with human review before production.",
+        "tip": "I use AI where it saves me real time, and I review what goes to production so quality does not slip."
+      }
+    ]
+  },
+  "faq": {
+    "label": "FAQ",
+    "title": "Common questions",
+    "items": [
+      {
+        "question": "What is a fractional CTO?",
+        "answer": "Part-time or project-based technology leadership: architecture, roadmap, hiring advice, and senior decisions - without a full-time executive hire."
+      },
+      {
+        "question": "Do you only work with Ruby?",
+        "answer": "Ruby on Rails is my main stack and where I deliver fastest. I can join existing stacks or help choose technology for new projects - the goal is maintainable software, not dogma."
+      },
+      {
+        "question": "Are you available for remote work from Finland?",
+        "answer": "Yes. I'm based in Finland (Europe/Helsinki) and work remotely with teams spread across Europe. Time zones and async collaboration are normal for me."
+      },
+      {
+        "question": "How do we start working together?",
+        "answer": "Send an email with a short description of your situation. We usually start with a call to understand goals and constraints, then agree on scope and next steps."
+      },
+      {
+        "question": "What kinds of products do you build?",
+        "answer": "Web applications, SaaS, internal tools, and multi-sided platforms - from MVP to long-running production systems. I focus on backend and architecture; frontends are often handled by your team or partners."
+      },
+      {
+        "question": "How do you handle security and privacy?",
+        "answer": "Sensible defaults for access, data, and logging - with GDPR-aware choices where personal data is involved. Proportionate to your product and scale."
+      }
+    ]
+  },
+  "howIWork": {
+    "label": "Process",
+    "title": "How I work",
+    "lead": "Business goals first, then the technical plan.",
+    "steps": [
+      {
+        "title": "Assess",
+        "text": "Look at the codebase, the team, the constraints, and what success means for the business."
+      },
+      {
+        "title": "Plan",
+        "text": "Agree on a technical approach with realistic milestones. No unnecessary complexity."
+      },
+      {
+        "title": "Deliver",
+        "text": "Regular updates, working software, and knowledge passed on to your team."
+      }
+    ]
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Let's talk",
+    "lead": "Working on something or want to see if we fit? Drop me a line.",
+    "linkedin": "LinkedIn"
+  },
+  "footer": {
+    "businessId": "Business ID (Y-tunnus)",
+    "ytjLink": "View in YTJ register",
+    "form": "Sole proprietorship (toiminimi)",
+    "languages": "Languages: Polish (native), English (professional), Finnish (learning - basic)",
+    "rights": "All rights reserved."
+  },
+  "privacy": {
+    "meta": {
+      "title": "Privacy policy | RubyCon",
+      "description": "How RubyCon handles data on this website: no analytics, theme preference storage, and contact details."
+    },
+    "title": "Privacy policy",
+    "updated": "Last updated: July 2026",
+    "controller": {
+      "title": "Controller",
+      "nameLabel": "Name",
+      "name": "Mateusz Górniak (RubyCon)",
+      "formLabel": "Legal form",
+      "form": "Finnish sole proprietorship (toiminimi)",
+      "emailLabel": "Email"
+    },
+    "rightsBrowserNote": "You can clear site data anytime via your browser settings.",
+    "sections": [
+      {
+        "id": "collection",
+        "title": "What this site collects",
+        "body": "This website does not use analytics or advertising trackers. Fonts are served from this site, not from third-party services. Your light or dark theme choice is stored in your browser (localStorage) so it can be remembered on later visits. If you email me, I receive the information you choose to send."
+      },
+      {
+        "id": "rights",
+        "title": "Your rights",
+        "body": "You can ask for access to or deletion of personal data you have shared with me by email at"
+      },
+      {
+        "id": "changes",
+        "title": "Changes",
+        "body": "This notice may be updated occasionally. The latest version is always published on this page."
+      }
+    ],
+    "backHome": "Back to homepage"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "lead": "There is no content at this address.",
+    "scenery": "While you are here anyway, enjoy a little Finnish scenery - lake, forest, and quiet.",
+    "homeCta": "Back to homepage",
+    "homeLinksLabel": "Or pick a language:",
+    "imageAlt": "Cartoon illustration of a Finnish lake and pine forest",
+    "home": "English",
+    "homePl": "Polski",
+    "homeFi": "Suomi"
+  }
+}

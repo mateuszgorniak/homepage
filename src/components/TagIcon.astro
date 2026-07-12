@@ -1,0 +1,19 @@
+---
+interface Props {
+  /** Path relative to `src/assets/icons/`, without `.svg` - e.g. `stack/ruby`, `expertise/architecture` */
+  src: string;
+  class?: string;
+}
+
+const { src, class: className = 'tag-icon' } = Astro.props;
+
+const icons = import.meta.glob<string>('../assets/icons/**/*.svg', {
+  eager: true,
+  query: '?raw',
+  import: 'default',
+});
+
+const svg = icons[`../assets/icons/${src}.svg`] ?? '';
+---
+
+<span class={className} set:html={svg} aria-hidden="true" />

@@ -1,0 +1,53 @@
+---
+import type { Translations } from '../i18n';
+
+interface Props {
+  t: Translations;
+}
+
+const { t } = Astro.props;
+---
+
+<section class="section" id="situations">
+  <div class="container reveal">
+    <p class="section-label">{t.nav.situations}</p>
+    <h2 class="section-title">{t.situations.title}</h2>
+    <p class="section-lead">{t.situations.lead}</p>
+
+    <ul class="situations-list">
+      {t.situations.items.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .situations-list {
+    list-style: none;
+    max-width: 40rem;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.625rem;
+  }
+
+  .situations-list li {
+    position: relative;
+    padding-left: 1.125rem;
+    font-size: 0.9375rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .situations-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.65em;
+    width: 0.3125rem;
+    height: 0.3125rem;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+</style>

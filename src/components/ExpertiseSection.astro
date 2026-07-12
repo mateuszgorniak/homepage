@@ -1,0 +1,92 @@
+---
+import type { Translations } from '../i18n';
+import TagIcon from './TagIcon.astro';
+import { expertiseIconSrc } from '../lib/tag-icons';
+
+interface Props {
+  t: Translations;
+}
+
+const { t } = Astro.props;
+---
+
+<section class="section" id="expertise">
+  <div class="container reveal">
+    <p class="section-label">{t.nav.expertise}</p>
+    <h2 class="section-title">{t.expertise.title}</h2>
+    <p class="section-lead">{t.expertise.lead}</p>
+
+    <div class="expertise-grid">
+      {t.expertise.items.map((item) => (
+        <article class="glass-card expertise-card">
+          <div class="expertise-card-top">
+            <span class="expertise-icon" aria-hidden="true">
+              <TagIcon src={expertiseIconSrc(item.id)} />
+            </span>
+            <p class="expertise-label">{item.name}</p>
+          </div>
+          <h3 class="expertise-summary">{item.summary}</h3>
+          <p class="expertise-detail">{item.tip}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+
+  .expertise-card {
+    padding: 1.375rem 1.5rem;
+  }
+
+  .expertise-card-top {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .expertise-icon {
+    display: inline-flex;
+    flex-shrink: 0;
+    color: var(--accent);
+  }
+
+  .expertise-icon :global(.icon) {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .expertise-label {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 1.2;
+  }
+
+  .expertise-summary {
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    line-height: 1.45;
+    color: var(--text);
+    margin-bottom: 0.625rem;
+  }
+
+  .expertise-detail {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+</style>

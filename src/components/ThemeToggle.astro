@@ -1,0 +1,127 @@
+---
+import type { Translations } from '../i18n';
+
+interface Props {
+  t: Translations;
+}
+
+const { t } = Astro.props;
+---
+
+<button
+  type="button"
+  class="theme-toggle"
+  data-theme-toggle
+  aria-pressed="false"
+  aria-label={t.theme.dark}
+  data-label-light={t.theme.light}
+  data-label-dark={t.theme.dark}
+>
+  <span class="theme-toggle-track">
+    <span class="theme-toggle-icon theme-toggle-icon-sun" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.75"></circle>
+        <path
+          d="M12 3v2M12 19v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M3 12h2M19 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"></path>
+      </svg>
+    </span>
+    <span class="theme-toggle-icon theme-toggle-icon-moon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path
+          d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linejoin="round"></path>
+      </svg>
+    </span>
+    <span class="theme-toggle-thumb" aria-hidden="true"></span>
+  </span>
+</button>
+
+<style>
+  .theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .theme-toggle-track {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    width: 3.25rem;
+    height: 1.75rem;
+    padding: 0.125rem;
+    box-sizing: border-box;
+    background: var(--nav-chip-bg);
+    border: 1px solid var(--nav-border);
+    border-radius: var(--radius-sm);
+    transition:
+      background 0.25s ease,
+      border-color 0.25s ease;
+  }
+
+  .theme-toggle:hover .theme-toggle-track {
+    background: var(--nav-chip-hover-bg);
+    border-color: var(--border-hover);
+  }
+
+  .theme-toggle-icon {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    color: var(--nav-muted);
+    pointer-events: none;
+    transition: color 0.25s ease;
+  }
+
+  .theme-toggle-icon svg {
+    display: block;
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+
+  .theme-toggle-thumb {
+    position: absolute;
+    top: 0.125rem;
+    left: 0.125rem;
+    width: calc(50% - 0.125rem);
+    height: calc(100% - 0.25rem);
+    box-sizing: border-box;
+    background: var(--surface-solid);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(26, 51, 82, 0.1);
+    transition:
+      left 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+      background 0.25s ease,
+      border-color 0.25s ease;
+  }
+
+  :global(html[data-theme='dark']) .theme-toggle-thumb {
+    left: 50%;
+  }
+
+  :global(html:not([data-theme='dark'])) .theme-toggle-icon-sun,
+  :global(html[data-theme='dark']) .theme-toggle-icon-moon {
+    color: var(--nav-ink);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .theme-toggle-thumb {
+      transition-duration: 0.01ms;
+    }
+  }
+</style>

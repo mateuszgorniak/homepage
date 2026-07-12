@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none" role="img" aria-label="RubyCon - web application development">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f4f7fb"/>
+      <stop offset="0.5" stop-color="#eef2f8"/>
+      <stop offset="1" stop-color="#e8edf5"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="980" cy="140" r="200" fill="rgba(120,160,220,0.16)"/>
+  <circle cx="1060" cy="500" r="160" fill="rgba(220,175,130,0.11)"/>
+  <circle cx="180" cy="520" r="120" fill="rgba(37,99,235,0.06)"/>
+
+  <g transform="translate(120 195)">
+    <g transform="scale(5.5)">
+      <path d="M8 8H24L28 14L16 28L4 14Z" fill="#003580" opacity=".14" transform="translate(0 1.1)"/>
+      <path d="M11.5 8H20.5L20 14H12Z" fill="#edf3fc"/>
+      <path d="M8 8H11.5L12 14H4Z" fill="#bcd6f2"/>
+      <path d="M20.5 8H24L28 14H20Z" fill="#86b3e8"/>
+      <path d="M4 14H12L16 28Z" fill="#3570cf"/>
+      <path d="M12 14H16V28Z" fill="#4884e4"/>
+      <path d="M16 14H20L16 28Z" fill="#2359ab"/>
+      <path d="M20 14H28L16 28Z" fill="#103f88"/>
+      <g stroke="#003580" stroke-linejoin="round" stroke-linecap="round" fill="none">
+        <path d="M8 8H24L28 14L16 28L4 14Z" stroke-width="1.3"/>
+        <g stroke-width=".7" opacity=".5">
+          <path d="M4 14H28"/>
+          <path d="M11.5 8L12 14M20.5 8L20 14"/>
+          <path d="M16 14V28M12 14L16 28M20 14L16 28"/>
+        </g>
+      </g>
+      <path d="M12.6 9.5H14.9M12.7 9.5L13 11.3" stroke="#ffffff" stroke-width="1.1" stroke-linecap="round" opacity=".9" fill="none"/>
+    </g>
+  </g>
+
+  <text x="320" y="268" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="80" font-weight="600" fill="#1c2433">rubycon</text>
+  <text x="320" y="330" font-family="ui-sans-serif, system-ui, sans-serif" font-size="36" font-weight="500" fill="#5a6578">Web application development</text>
+  <text x="320" y="382" font-family="ui-sans-serif, system-ui, sans-serif" font-size="28" fill="#5b7794">Mateusz Górniak · Finland</text>
+
+  <rect x="320" y="420" width="72" height="3" rx="1.5" fill="#2563eb"/>
+  <text x="320" y="468" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="24" font-weight="500" fill="#2563eb">rubycon.fi</text>
+</svg>

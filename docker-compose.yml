@@ -1,0 +1,47 @@
+services:
+  dev:
+    build:
+      context: .
+      target: dev
+    ports:
+      - "4321:4321"
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+      - astro_dev:/app/.astro
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      ASTRO_TELEMETRY_DISABLED: "1"
+      BASE_PATH: /
+      SITE_URL: http://localhost:4321
+
+  preview:
+    build:
+      context: .
+      target: preview
+      args:
+        BASE_PATH: ${BASE_PATH:-/}
+        SITE_URL: ${SITE_URL:-https://rubycon.fi}
+    ports:
+      - "4321:4321"
+    profiles:
+      - preview
+
+  build:
+    build:
+      context: .
+      target: build
+      args:
+        BASE_PATH: ${BASE_PATH:-/}
+        SITE_URL: ${SITE_URL:-https://rubycon.fi}
+    volumes:
+      - ./dist:/export
+    command: ["sh", "-c", "cp -r /app/dist/. /export/ && echo 'Build copied to ./dist'"]
+    profiles:
+      - build
+
+volumes:
+  node_modules:
+  astro_dev:

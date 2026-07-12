@@ -1,0 +1,205 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FlagEn from '../components/icons/FlagEn.astro';
+import FlagPl from '../components/icons/FlagPl.astro';
+import FlagFi from '../components/icons/FlagFi.astro';
+import { defaultLocale, getTranslations, type Locale } from '../i18n';
+import { getLocalePath } from '../lib/locale-urls';
+
+const basePath = import.meta.env.BASE_URL;
+const pathname = Astro.url.pathname;
+
+function detectLocale(path: string): Locale {
+  if (path.startsWith('/pl/') || path === '/pl') return 'pl';
+  if (path.startsWith('/fi/') || path === '/fi') return 'fi';
+  return defaultLocale;
+}
+
+const locale = detectLocale(pathname);
+const t = getTranslations(locale);
+const homePath = getLocalePath(locale, basePath);
+const imagePath = `${basePath}images/not-found.webp`;
+
+const homeLinks = [
+  { Flag: FlagEn, label: t.notFound.home, href: getLocalePath('en', basePath) },
+  { Flag: FlagPl, label: t.notFound.homePl, href: getLocalePath('pl', basePath) },
+  { Flag: FlagFi, label: t.notFound.homeFi, href: getLocalePath('fi', basePath) },
+] as const;
+---
+
+<BaseLayout
+  locale={locale}
+  t={t}
+  title={`404 | RubyCon`}
+  description={t.notFound.lead}
+  robots="noindex, follow"
+>
+  <section class="section legal-page not-found-page">
+    <div class="container">
+      <div class="not-found-layout">
+        <figure class="not-found-art">
+          <img
+            src={imagePath}
+            width="1536"
+            height="1024"
+            alt={t.notFound.imageAlt}
+            decoding="async"
+            loading="lazy"
+          />
+        </figure>
+
+        <div class="not-found-copy">
+          <h1 class="legal-title">{t.notFound.title}</h1>
+          <p class="legal-section-body">{t.notFound.lead}</p>
+          <p class="legal-section-body not-found-scenery">{t.notFound.scenery}</p>
+
+          <a href={homePath} class="not-found-home-cta">{t.notFound.homeCta}</a>
+
+          <p class="not-found-links-label">{t.notFound.homeLinksLabel}</p>
+          <ul class="not-found-links">
+            {homeLinks.map(({ Flag, label, href }) => (
+              <li>
+                <a href={href} class="not-found-link" aria-label={label}>
+                  <Flag class="not-found-flag" />
+                  <span class="not-found-link-text">{label}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .not-found-page .legal-title {
+    margin-bottom: 0.75rem;
+  }
+
+  .not-found-layout {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+    max-width: 48rem;
+  }
+
+  .not-found-art {
+    margin: 0;
+    justify-self: center;
+  }
+
+  .not-found-art img {
+    display: block;
+    width: min(100%, 22rem);
+    height: auto;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--card-shadow-md);
+  }
+
+  .not-found-copy {
+    min-width: 0;
+  }
+
+  .not-found-scenery {
+    margin-top: 0.75rem;
+  }
+
+  .not-found-home-cta {
+    display: inline-flex;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.125rem;
+    font-family: var(--font-nav);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--nav-ink);
+    text-decoration: none;
+    background: var(--surface-solid);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--card-shadow-sm);
+    transition:
+      color 0.2s ease,
+      border-color 0.2s ease,
+      background 0.2s ease,
+      box-shadow 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .not-found-home-cta:hover {
+    opacity: 1;
+    border-color: var(--border-hover);
+    background: var(--hero-cta-hover-bg);
+    box-shadow: var(--card-shadow-md);
+    transform: translateY(-1px);
+  }
+
+  .not-found-links-label {
+    margin: 1.5rem 0 0.75rem;
+    font-size: 0.8125rem;
+    color: var(--muted);
+  }
+
+  .not-found-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .not-found-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 0.875rem;
+    font-family: var(--font-nav);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--nav-ink);
+    text-decoration: none;
+    background: var(--surface-solid);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--card-shadow-sm);
+    transition:
+      color 0.2s ease,
+      border-color 0.2s ease,
+      background 0.2s ease,
+      box-shadow 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .not-found-link:hover {
+    opacity: 1;
+    border-color: var(--border-hover);
+    background: var(--hero-cta-hover-bg);
+    box-shadow: var(--card-shadow-md);
+    transform: translateY(-1px);
+  }
+
+  .not-found-link :global(.not-found-flag) {
+    width: 1.25rem;
+    height: auto;
+    flex-shrink: 0;
+    border-radius: 2px;
+  }
+
+  .not-found-link-text {
+    line-height: 1.2;
+  }
+
+  @media (min-width: 720px) {
+    .not-found-layout {
+      grid-template-columns: minmax(14rem, 22rem) 1fr;
+      gap: 2.5rem;
+      max-width: 56rem;
+    }
+
+    .not-found-art {
+      justify-self: start;
+    }
+  }
+</style>

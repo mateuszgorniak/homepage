@@ -1,0 +1,71 @@
+---
+import type { Translations } from '../i18n';
+
+interface Props {
+  t: Translations;
+}
+
+const { t } = Astro.props;
+---
+
+<section class="section" id="faq">
+  <div class="container reveal">
+    <p class="section-label">{t.faq.label}</p>
+    <h2 class="section-title">{t.faq.title}</h2>
+
+    <div class="faq-list">
+      {t.faq.items.map((item) => (
+        <details class="faq-item glass-card">
+          <summary class="faq-question">{item.question}</summary>
+          <p class="faq-answer">{item.answer}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-list {
+    display: grid;
+    gap: 0.75rem;
+    max-width: 720px;
+  }
+
+  .faq-item {
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .faq-question {
+    padding: 1.125rem 1.25rem;
+    font-family: var(--font-nav);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--nav-ink);
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-question::after {
+    content: '+';
+    float: right;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    color: var(--accent);
+  }
+
+  .faq-item[open] .faq-question::after {
+    content: '−';
+  }
+
+  .faq-answer {
+    padding: 0 1.25rem 1.125rem;
+    font-size: 0.9375rem;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+</style>
